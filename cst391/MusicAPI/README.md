@@ -4,7 +4,7 @@
 
 ![Image One](docs/albumsid7.png)
 
-[google](https://google.com)
+[Link](https://google.com)
 
 - one
 - two
