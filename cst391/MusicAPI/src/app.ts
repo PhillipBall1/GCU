@@ -6,7 +6,7 @@ import albumsRouter from './albums/albums.routes';
 import artistsRouter from './artists/artists.routes';
 import logger from './middleware/logger.middleware';
 import cors from 'cors';
-import helemt from 'helmet';
+import helmet from 'helmet';
 
 
 dotenv.config();
@@ -25,7 +25,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
-app.use(helemt());
+app.use(helmet());
 
 console.log(process.env.MY_SQL_DB_HOST);
 
