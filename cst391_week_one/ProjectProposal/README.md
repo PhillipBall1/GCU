@@ -8,7 +8,7 @@
 ---
 ## Introduction
 ```
-Fruit Fiesta is going to be a fruit only shop, where the user can create an account, add fruit to their cart, and checkout. I have never seen a fruit only shop and mainly thought it would be a fun idea. 
+Fruit Fiesta is a fruit only shop, where the user can create an account, add fruit to their cart, and checkout. I have never seen a fruit only shop and mainly thought it would be a fun idea. 
 ```
 
 ## Functionality
