@@ -7,9 +7,8 @@
 
 ---
 ## Introduction
-```
+
 Fruit Fiesta is a fruit only shop, where the user can create an account, add fruit to their cart, and checkout. I have never seen a fruit only shop and mainly thought it would be a fun idea. 
-```
 
 ## Functionality
 
@@ -50,6 +49,4 @@ Fruit Fiesta is a fruit only shop, where the user can create an account, add fru
 
 ## Risks
 
-```
 I believe that the biggest risks in this project will be time related, I believe that I can do everything that I have listed out in the website for the UI side of things, but due to being new to the whole backend side, I believe that it will eat up a majority of my time. All-in-all this is a very exciting project and I believe it will be fun nonetheless! 
-```
