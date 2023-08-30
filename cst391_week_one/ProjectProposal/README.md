@@ -10,6 +10,97 @@
 
 Fruit Fiesta is a fruit only shop, where the user can create an account, add fruit to their cart, and checkout. I have never seen a fruit only shop and mainly thought it would be a fun idea. 
 
+## Changes
+
+|Date|Change made|
+|:-------:|:----------------------------------:|
+|8/28/23|changed the id values from the fruit and user database to <br>match their respective names (fruitId)(userId) in sql|
+
+
+## Fruit Routes
+
+|GET|fruit|
+|:-------:|:----------------------------------:|
+|Route-|/fruit|
+|DAO-|+readFruit()|
+|Task-|retrieves all of the fruit|
+
+![get_fruit](docs/get_fruit.png)
+
+|GET|fruitByDescription|
+|:-------:|:----------------------------------:|
+|Route-|/fruit/search/description/:search|
+|DAO-|+readFruitByDescription()|
+|Task-|retrieves all of the fruit that contain the :search|
+
+![get_fruit_by_desc](docs/get_fruit_by_desc.png)
+
+|GET|fruitById|
+|:-------:|:----------------------------------:|
+|Route-|/fruit?fruitId=?|
+|DAO-|+readFruitByFruitId()|
+|Task-|retrieve a single fruit by the input ID|
+
+![get_fruit_by_id](docs/get_fruit_by_id.png)
+
+|POST|fruit|
+|:-------:|:----------------------------------:|
+|Route-|/fruit|
+|DAO-|+createFruit()|
+|Task-|creates a single fruit|
+
+![get_fruit_by_id](docs/post_fruit.png)
+
+|PUT|fruit|
+|:-------:|:----------------------------------:|
+|Route-|/fruit|
+|DAO-|+updateFruit()|
+|Task-|updates a single fruit by id|
+
+![get_fruit_by_id](docs/put_fruit.png)
+
+|DELETE|fruit|
+|:-------:|:----------------------------------:|
+|Route-|/fruit|
+|DAO-|+deleteFruit()|
+|Task-|removes a single fruit by id|
+
+![get_fruit_by_id](docs/delete_fruit.png)
+
+## User Routes
+
+|GET|users[]|
+|:-------:|:----------------------------------:|
+|Route-|/user|
+|DAO-|+readUsers()|
+|Task-|retrieves all users|
+
+![get_fruit_by_id](docs/get_user.png)
+
+|POST|user|
+|:-------:|:----------------------------------:|
+|Route-|/user|
+|DAO-|+createUser()|
+|Task-|creates a single user|
+
+![get_fruit_by_id](docs/post_user.png)
+
+|PUT|user|
+|:-------:|:----------------------------------:|
+|Route-|/user|
+|DAO-|+updateUser()|
+|Task-|updates a single user by id|
+
+![get_fruit_by_id](docs/put_user.png)
+
+|DELETE|user|
+|:-------:|:----------------------------------:|
+|Route-|/user|
+|DAO-|+deleteUser()|
+|Task-|removes a single user by id|
+
+![get_fruit_by_id](docs/delete_user.png)
+
 ## Functionality
 
 <h4>As a customer, I would like to:</h4>
