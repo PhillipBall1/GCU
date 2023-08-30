@@ -13,7 +13,7 @@ Fruit Fiesta is a fruit only shop, where the user can create an account, add fru
 ## Changes
 
 |Date|Change made|
-|:-------:|:----------------------------------:|
+|:-------:|----------------------------------|
 |8/28/23|changed the id values from the fruit and user database to <br>match their respective names (fruitId)(userId) in sql|
 
 
