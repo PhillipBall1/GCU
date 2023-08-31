@@ -18,7 +18,7 @@ export const createUser = async (user: User) => {
 
 export const updateUser = async (user: User) => {
     return execute<OkPacket>(usersQueries.updateUser,
-        [user.userId, user.username, user.password, user.street, user.city, user.state, user.country, user.zip, user.userId]);
+        [user.username, user.password, user.street, user.city, user.state, user.country, user.zip, user.userId]);
 };
 
 export const deleteUser = async (userId: number) => {

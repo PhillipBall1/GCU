@@ -54,7 +54,7 @@ export const updateUser: RequestHandler = async (req: Request, res: Response) =>
     } catch (error) {
         console.error('[users.controller][updateUser][Error] ', error);
         res.status(500).json({
-            message: 'There was an error when writing users'
+            message: 'There was an error when writing fruit'
         });
     }
 };
