@@ -1,0 +1,12 @@
+C:\git\GCU\cst250\week_one\CarConsoleApp\CarClassLibrary\bin\Debug\net6.0\CarClassLibrary.deps.json
+C:\git\GCU\cst250\week_one\CarConsoleApp\CarClassLibrary\bin\Debug\net6.0\CarClassLibrary.dll
+C:\git\GCU\cst250\week_one\CarConsoleApp\CarClassLibrary\bin\Debug\net6.0\CarClassLibrary.pdb
+C:\git\GCU\cst250\week_one\CarConsoleApp\CarClassLibrary\obj\Debug\net6.0\CarClassLibrary.csproj.AssemblyReference.cache
+C:\git\GCU\cst250\week_one\CarConsoleApp\CarClassLibrary\obj\Debug\net6.0\CarClassLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\git\GCU\cst250\week_one\CarConsoleApp\CarClassLibrary\obj\Debug\net6.0\CarClassLibrary.AssemblyInfoInputs.cache
+C:\git\GCU\cst250\week_one\CarConsoleApp\CarClassLibrary\obj\Debug\net6.0\CarClassLibrary.AssemblyInfo.cs
+C:\git\GCU\cst250\week_one\CarConsoleApp\CarClassLibrary\obj\Debug\net6.0\CarClassLibrary.csproj.CoreCompileInputs.cache
+C:\git\GCU\cst250\week_one\CarConsoleApp\CarClassLibrary\obj\Debug\net6.0\CarClassLibrary.dll
+C:\git\GCU\cst250\week_one\CarConsoleApp\CarClassLibrary\obj\Debug\net6.0\refint\CarClassLibrary.dll
+C:\git\GCU\cst250\week_one\CarConsoleApp\CarClassLibrary\obj\Debug\net6.0\CarClassLibrary.pdb
+C:\git\GCU\cst250\week_one\CarConsoleApp\CarClassLibrary\obj\Debug\net6.0\ref\CarClassLibrary.dll
