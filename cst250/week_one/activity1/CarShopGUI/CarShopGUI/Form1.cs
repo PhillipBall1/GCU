@@ -71,7 +71,7 @@ namespace CarShopGUI
         private void button3_Click(object sender, EventArgs e)
         {
             decimal total = store.checkout();
-            label6.Text = "$" + total.ToString();
+            label7.Text = "$" + total.ToString();
         }
     }
 }
