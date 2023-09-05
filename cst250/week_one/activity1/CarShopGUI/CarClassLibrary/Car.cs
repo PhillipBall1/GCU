@@ -11,8 +11,8 @@ namespace CarClassLibrary
         public string Make { get; set; }
         public string Model { get; set; }
         public decimal Price { get; set; }
-        public decimal Year { get; set; }
-        public decimal Miles { get; set; }
+        public int Year { get; set; }
+        public int Miles { get; set; }
 
         public Car(string make, string model, decimal price, int year, int miles)
         {
