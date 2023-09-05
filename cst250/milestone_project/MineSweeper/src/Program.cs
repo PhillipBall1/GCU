@@ -5,7 +5,7 @@ class Program
 	{
 		//create board
 		int[] size = new int[] { 20, 20 };
-		Board board = new Board(size, 90);
+		Board board = new Board(size, 99);
 
 		//setup board
 		board.SetupLiveNeighbors();
