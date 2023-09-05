@@ -1,4 +1,4 @@
-class Cell
+public class Cell
 {
 	int row;
 	int column;
@@ -12,13 +12,18 @@ class Cell
 		this.column = column;
 		this.live = live;
 	}
-	
-	private void SetVisited(bool visited)
-	{
-		this.visited = visited;
-	}
-	
-	private bool GetVisited() { return visited; }
-	
-	private int GetLiveNeighbors() { return liveNeighbors; }
+
+    public void SetVisited(bool visited) { this.visited = visited; }
+
+    public void SetLiveNeighbors(int liveCount) { this.liveNeighbors = liveCount; }
+
+    public bool GetVisited() { return visited; }
+
+    public int GetLiveNeighbors() { return liveNeighbors; }
+
+	public int GetRow() { return row; }
+
+    public int GetColumn() { return column; }
+
+	public bool GetLive() { return live; }
 }
