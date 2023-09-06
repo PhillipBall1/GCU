@@ -22,18 +22,18 @@ class Program
 			if(i % board.GetSize()[0] == 0)
 			{
 				Console.WriteLine("");
-            }
+            		}
 
 			//If square is a bomb display it as [X]
 			//else display its live neighbors value
 			if (board.GetCells()[i].GetLive())
 			{
-                Console.Write("[" + "X" + "]");
-            }
-            else
+                		Console.Write("[" + "X" + "]");
+            		}
+            		else
 			{
-                Console.Write("[" + board.GetCells()[i].GetLiveNeighbors().ToString() + "]");
+                		Console.Write("[" + board.GetCells()[i].GetLiveNeighbors().ToString() + "]");
 			}
-        }
+        	}
 	}
 }
