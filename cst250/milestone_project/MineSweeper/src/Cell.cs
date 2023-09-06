@@ -13,17 +13,17 @@ public class Cell
 		this.live = live;
 	}
 
-    public void SetVisited(bool visited) { this.visited = visited; }
+    	public void SetVisited(bool visited) { this.visited = visited; }
 
-    public void SetLiveNeighbors(int liveCount) { this.liveNeighbors = liveCount; }
+    	public void SetLiveNeighbors(int liveCount) { this.liveNeighbors = liveCount; }
 
-    public bool GetVisited() { return visited; }
+    	public bool GetVisited() { return visited; }
 
-    public int GetLiveNeighbors() { return liveNeighbors; }
+    	public int GetLiveNeighbors() { return liveNeighbors; }
 
 	public int GetRow() { return row; }
 
-    public int GetColumn() { return column; }
+    	public int GetColumn() { return column; }
 
 	public bool GetLive() { return live; }
 }
