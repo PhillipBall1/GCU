@@ -56,11 +56,26 @@
 >```
 >[value]="product">{{product}}</option>
 >```
->This allowed for the product to be set from the info.component.ts and later used as a variable to be displayed into the console from screenshot 5.
+>This allowed for the product to be set from a choice to info.component.ts and later used as a variable to be displayed into the console from screenshot 5.
 
 ---
 
 ***Describe [(ngModel)] also used in info.component.html***
+
+> The [(ngModel)] was used twice in info.component.html, where the first one was used to bind the quantity and the second was used to bind the selected product the user wanted:
+>
+>```
+>[(ngModel)]="quantity" name="quantity">
+>```
+>
+>```
+>[(ngModel)]="selectedProduct" name="products" #selected="ngModel">
+>```
+>
+> This allows for both of the variables to get set and this can be shown in screenshot 5.
+
+
+
 
 ## Part Two
 
