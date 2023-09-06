@@ -10,17 +10,19 @@ class Program
 		//setup cells in board
 		board.SetupLiveNeighbors();
 
+
+		Console.WriteLine("BEFORE VISIT on square (1, 5)");
 		//display board
 		PrintBoardForLiveGame(board);
+		Console.WriteLine("");
+		Console.WriteLine("AFTER VISIT on square (1, 5)");
 		
-		Console.WriteLine("BEFORE VISIT");
-		
-		board.RevealCells(board.GetCells()[5]);
+		board.RevealCells(board.GetCells()[15]);
 		
 		PrintBoardForLiveGame(board);
 		
-		Console.WriteLine("AFTER VISIT");
 		
+		Console.WriteLine("");Console.WriteLine("");
 		PrintBoard(board);
 	}
 	

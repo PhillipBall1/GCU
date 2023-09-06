@@ -128,6 +128,10 @@ public class Board
 			RevealCells(FindCellInPos(startCell,  0,  1));
 			
 		}
+		else
+		{
+			startCell.SetVisited(true);
+		}
 		
 		return 0;
 	}
