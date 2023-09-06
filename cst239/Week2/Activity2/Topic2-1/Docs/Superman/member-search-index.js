@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"<Unnamed>","c":"Superman","l":"NormalAttack(SuperHero)"},{"p":"<Unnamed>","c":"Superman","l":"Regeneration()"},{"p":"<Unnamed>","c":"Superman","l":"Special(SuperHero)"},{"p":"<Unnamed>","c":"Superman","l":"Superman(int)","u":"%3Cinit%3E(int)"}];updateSearchResults();

@@ -1,0 +1,33 @@
+package MainApp;
+
+public class Product
+{
+	private String name;
+	private String description;
+	private float price;
+	private int quantity;
+	
+	//Constructor
+	public Product(String name, String description, float price, int quantity)
+	{
+		this.name = name;
+		this.description = description;
+		this.price = price;
+		this.quantity = quantity;
+	}
+	
+	//Getters
+	public String GetName() {return name;}
+	public String GetDescription() {return description;}
+	public float GetPrice() {return price;}
+	public int GetQuantity() {return quantity;}
+	
+	//Setters
+	public void SetName(String name) { this.name = name;}
+	public void SetDescription(String description) {this.description = description;}
+	public void SetPrice(float price) {this.price = price;}
+	public void SetQuantity(int quantity) {this.quantity = quantity;}
+	
+	//Methods
+	public int IncreaseQuantity(int current) { return current + 1;	}
+}

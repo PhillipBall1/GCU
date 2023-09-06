@@ -1,0 +1,50 @@
+package MainApp;
+
+import java.util.*;
+
+public class RandomName
+{
+	private static String[] randomNames = new String[31];
+	
+	public static void PopulateNameArray()
+	{
+		randomNames[0] = "Eggs-Farm fresh eggs-2.46";
+		randomNames[1] = "Bagels-Great bagels for lots of different recipes-2.12";
+		randomNames[2] = "Bananas-Fresh bananas, good for some energy-1.57";
+		randomNames[3] = "Milk-100% Grassfed milk-1.73";
+		randomNames[4] = "Icecream-Best chocolate icecream around-2.34";
+		randomNames[5] = "Pizza-Large 14 inch pizza-4.85";
+		randomNames[6] = "Chips-Salt & Vinegar chips-2.23";
+		randomNames[7] = "Pie-Pumpkin pie-3.68";
+		randomNames[8] = "Honey-Jar of honey, also very energizing-1.87";
+		randomNames[9] = "Pasta-Capabilities with pasta are endless-2.13";
+		randomNames[10] = "Yogurt-Vanilla yogurt, the best there is-1.12";
+		randomNames[11] = "Cheese-Cheddar cheese, great for sandwiches-1.43";
+		randomNames[12] = "Pepporoini-100% Grassfed pepporoini-3.67";
+		randomNames[13] = "Salami-100% Grassfed salami-3.47";
+		randomNames[14] = "Butter-Used to cook plenty of things-1.89";
+		randomNames[15] = "Bread-Used to make great sandwiches-1.43";
+		randomNames[16] = "Chocolate-Milk chocolate-0.99";
+		randomNames[17] = "Salmon-Alaskan salmon, very good-5.76";
+		randomNames[18] = "Waffles-Frozen Waffles-2.03";
+		randomNames[19] = "Apple Juice-Everyone needs some apple juice-2.79";
+		randomNames[20] = "Beans-Best refried beans on planet earth-8.23";
+		randomNames[21] = "Broccoli-Fresh farmed and healthy broccoli-1.65";
+		randomNames[22] = "Dumplings-Great pork dumplings-4.34";
+		randomNames[23] = "Garlic-Needed for some good alfredo-1.76";
+		randomNames[24] = "Lobster-Feeling really crazy?-34.23";
+		randomNames[25] = "Oatmeal-Healthy start to the day-2.34";
+		randomNames[26] = "Steak-Only the best steak around-23.43";
+		randomNames[27] = "Ramen-Simple college snack-0.56";
+		randomNames[28] = "Crackers-Just some plain old crackers-0.87";
+		randomNames[29] = "Potatoes-Baked potatoes are good for your mental-2.27";
+		randomNames[30] = "Whole Turkey-Only a Thanksgiving really-12.73";	
+	}
+	
+	public static String GetRandomName()
+	{
+		Random r = new Random();
+		
+		return randomNames[r.nextInt(30)];
+	}
+}

@@ -1,0 +1,42 @@
+package MainApp;
+
+public class RandomName
+{
+	private String[] randomNames = new String[30];
+	
+	public void PopulateNameArray()
+	{
+		randomNames[0] = "Eggs-Farm fresh eggs-2.46";
+		randomNames[1] = "Bagels-Great bagels for lots of different recipes-2.12";
+		randomNames[2] = "Bananas-Fresh bananas, good for some energy-1.57";
+		randomNames[3] = "Milk-100% Grassfed milk-1.73";
+		randomNames[4] = "Icecream-Best chocolate icecream around-2.34";
+		randomNames[5] = "Pizza-Large 14 inch pizza-4.85";
+		randomNames[6] = "Chips-Salt & Vinegar chips-2.23";
+		randomNames[7] = "Pie-Pumpkin pie-3.68";
+		randomNames[8] = "Honey-Jar of honey, also very energizing-1.87";
+		randomNames[9] = "Pasta-Capabilities with pasta are endless-2.13";
+		randomNames[10] = "Yogurt-Vanilla yogurt, the best there is-1.12";
+		randomNames[11] = "Cheese-Cheddar cheese, great for sandwiches-1.43";
+		randomNames[12] = "Pepporoini-100% Grassfed pepporoini-3.67";
+		randomNames[13] = "Salami-100% Grassfed salami-3.47";
+		randomNames[14] = "Butter-Used to cook plenty of things-1.89";
+		randomNames[15] = "Bread-Used to make great sandwiches-1.43";
+		randomNames[16] = "Chocolate-Milk chocolate-0.99";
+		randomNames[17] = "Salmon-Alaskan salmon, very good-5.76";
+		randomNames[18] = "Waffles-Frozen Waffles-2.03";
+		randomNames[19] = "Apple Juice-Everyone needs some apple juice-2.79";
+		randomNames[20] = "Beans-Best refried beans on planet earth-8.23";
+		randomNames[21] = "Broccoli-Fresh farmed and healthy broccoli-1.65";
+		randomNames[22] = "";
+		randomNames[23] = "";
+		randomNames[24] = "";
+		randomNames[25] = "";
+		randomNames[26] = "";
+		randomNames[27] = "";
+		randomNames[28] = "";
+		randomNames[29] = "";
+		randomNames[30] = "";
+		
+	}
+}

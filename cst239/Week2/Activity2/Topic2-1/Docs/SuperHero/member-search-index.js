@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"<Unnamed>","c":"SuperHero","l":"Attack(SuperHero, int)","u":"Attack(SuperHero,int)"},{"p":"<Unnamed>","c":"SuperHero","l":"IncreaseHealth(int)"},{"p":"<Unnamed>","c":"SuperHero","l":"IsDead()"},{"p":"<Unnamed>","c":"SuperHero","l":"SuperHero(String, int)","u":"%3Cinit%3E(java.lang.String,int)"}];updateSearchResults();

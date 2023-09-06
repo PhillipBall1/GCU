@@ -1,0 +1,26 @@
+package MainApp;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+
+public class FileManager
+{
+	public static List<String> FileToStringList(String fileName) throws IOException 
+	{	
+		List<String> tempList = new ArrayList<String>();
+		BufferedReader in = new BufferedReader(new FileReader(fileName));
+		
+		String c; 
+		while ((c = in.readLine()) != null) 
+		{
+			tempList.add(c);
+		}
+		in.close();
+		return tempList;
+	}
+}

@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"app","c":"Triangle","l":"CalculateArea()"},{"p":"app","c":"Triangle","l":"Triangle(int, int, String)","u":"%3Cinit%3E(int,int,java.lang.String)"}];updateSearchResults();

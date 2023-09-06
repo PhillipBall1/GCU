@@ -1,0 +1,26 @@
+package MainApp;
+
+import java.util.List;
+import java.util.Scanner;
+
+public class ChooseProduct
+{
+	public Product ChooseProductForCart(Scanner mainScanner, List<Product> productList, List<String> stringList, Cart cart) 
+	{
+		System.out.println("\n\nEnter number of what you want to add to cart!");
+		int input = mainScanner.nextInt();
+		Product chosenProduct = productList.get(input - 1);
+		chosenProduct.DecreaseQuantity(1);
+		
+		if(chosenProduct.GetQuantity() <= 0) productList.remove(chosenProduct);
+		
+		Product itemToBeInCart = new Product(
+				chosenProduct.GetName(), 
+				chosenProduct.GetDescription(), 
+				chosenProduct.GetPrice(), 
+				1,
+				chosenProduct.GetType());
+		return itemToBeInCart;
+	}
+	
+}

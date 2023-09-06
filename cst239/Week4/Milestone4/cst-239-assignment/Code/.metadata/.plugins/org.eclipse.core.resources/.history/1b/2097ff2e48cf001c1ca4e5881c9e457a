@@ -1,0 +1,22 @@
+package MainApp;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+
+public class FileManager
+{
+	public static void FileToString(String fileName) throws IOException 
+	{	
+		BufferedReader in = new BufferedReader(new FileReader(fileName));
+		
+		String currentString = in.readLine();
+		System.out.println(currentString);
+		int c; 
+		while ((c = in.read()) != -1) 
+		{
+			
+		}
+	}
+}

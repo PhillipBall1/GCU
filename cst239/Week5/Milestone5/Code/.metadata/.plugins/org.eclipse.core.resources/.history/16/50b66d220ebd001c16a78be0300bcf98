@@ -1,0 +1,39 @@
+package MainApp;
+
+public class StoreFront 
+{
+
+	public static void main(String[] args) 
+	{
+Name.PopulateLists();
+        
+        int mainInput = 0;
+
+        SetGear();
+        
+        while(mainInput != 3)
+        {
+            if(mainInput == 0)
+            {
+                System.out.println("------------------------------");
+                System.out.println("Welcome to the Mercenary Shop! \n 1: Gear \n 2: Check Inventory \n 3: Exit\n" + "Balance: " + balance);
+                System.out.println("------------------------------");
+                mainInput = mainScanner.nextInt();
+            }
+            switch(mainInput)
+            {
+                case 1: 
+                DisplayGear();
+                mainInput = 0;
+                break;
+                case 2: 
+                DisplayOwnedItems();
+                mainInput = 0;
+                break;
+
+                case 0: break;
+            }
+        }
+	}
+
+}

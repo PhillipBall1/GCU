@@ -1,0 +1,31 @@
+Eggs-Farm fresh eggs-2.46-Animal
+Bagels-Great bagels for lots of different recipes-2.12-Grain
+Bananas-Fresh bananas, good for some energy-1.57-Produce
+Milk-100% Grass fed milk-1.73-Dairy
+Ice cream-Best chocolate ice cream around-2.34-Dairy
+Pizza-Large 14 inch pizza-4.85-Premade
+Chips-Salt & Vinegar chips-2.23-Snack
+Pie-Pumpkin pie-3.68-Premade
+Tea-Some classic tea-1.87-Beverage
+Pasta-Capabilities with pasta are endless-2.13-Grain
+Yogurt-Vanilla yogurt, the best there is-1.12-Dairy
+Cheese-Cheddar cheese, great for sandwiches-1.43-Dairy
+Pepperoini-100% Grassfed pepperoini-3.67-Animal
+Salami-100% Grassfed salami-3.47-Animal
+Butter-Used to cook plenty of things-1.89-Dairy
+Bread-Used to make great sandwiches-1.43-Grain
+Chocolate-Milk chocolate-0.99-Dairy
+Salmon-Alaskan salmon, very good-5.76-Animal
+Waffles-Frozen Waffles-2.03-Grain
+Apple Juice-Everyone needs some apple juice-2.79-Beverage
+Orange Juice-Good start to the morning-8.23-Beverage
+Broccoli-Fresh farmed and healthy broccoli-1.65-Produce
+Smoothie-Healthy and refreshing-4.34-Beverage
+Soda-Pretty unhealthy but nice on a hot day-1.76-Beverage
+Lobster-Feeling really crazy?-34.23-Animal
+Oatmeal-Healthy start to the day-2.34-Grain
+Steak-Only the best steak around-23.43-Animal
+Ramen-Simple college snack-0.56-Snack
+Crackers-Just some plain old crackers-0.87-Snack
+Cheetos-Not the healthiest but good-0.99-Snack
+Whole Turkey-Only a Thanksgiving thing really-12.73-Animal

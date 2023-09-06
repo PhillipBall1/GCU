@@ -1,0 +1,41 @@
+package MainApp;
+
+import java.util.List;
+import java.util.Scanner;
+
+public class ChooseProduct
+{
+	public boolean ChooseProductForCart(Scanner mainScanner, List<Product> productList) 
+	{
+		System.out.println("\n\nEnter number of what you want to add to cart!");
+		int input = mainScanner.nextInt();
+		Product chosenProduct = productList.get(input - 1);
+		
+		StoreFront.productListManager.RemoveItemFromList(chosenProduct.ProductToString(chosenProduct));
+		
+		chosenProduct.DecreaseQuantity(1);
+		if(chosenProduct.GetQuantity() <= 0) productList.remove(chosenProduct);
+		
+		Product itemToBeInCart = new Product(
+				chosenProduct.GetName(), 
+				chosenProduct.GetDescription(), 
+				chosenProduct.GetPrice(), 
+				1,
+				chosenProduct.GetType());
+		String newItemString = itemToBeInCart.ProductToString(itemToBeInCart);
+		StoreFront.cart.AddItemToCart(newItemString);
+		StoreFront.cart.IncreasePaymentNeeded(itemToBeInCart.GetPrice());
+		StoreFront.cart.IncreaseItemsInCart(1);
+		System.out.println("\n" + itemToBeInCart.GetName() +" successfully added to cart!");
+		
+		System.out.println("\nDo you want to continue shopping?\n 1: Yes\n 2: No");
+		String inputString = mainScanner.next();
+		switch (inputString)
+		{
+		case "1": return true; 
+		case "2": return false;
+		}
+		return false;
+	}
+	
+}

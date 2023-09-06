@@ -1,0 +1,21 @@
+package MainApp;
+
+import java.io.FileReader;
+import java.io.IOException;
+
+
+public class FileManager
+{
+	public static void FileToString(String fileName) throws IOException 
+	{	
+		FileReader in = null;
+		
+		in = new FileReader(fileName);
+		
+		int c; 
+		while ((c = in.read()) != -1) 
+		{
+			
+		}
+	}
+}

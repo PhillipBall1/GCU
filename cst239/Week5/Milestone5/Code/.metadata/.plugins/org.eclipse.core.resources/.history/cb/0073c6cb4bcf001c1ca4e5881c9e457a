@@ -1,0 +1,21 @@
+package MainApp;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+
+public class FileManager
+{
+	public static void FileToStringList(String fileName, ProductListManager stringList) throws IOException 
+	{	
+		BufferedReader in = new BufferedReader(new FileReader(fileName));
+		
+		String c; 
+		while ((c = in.readLine()) != null) 
+		{
+			stringList.AddItemToList(c);
+		}
+		in.close();
+	}
+}

@@ -1,0 +1,9 @@
+package MainApp;
+
+public class Cart
+{
+	private int paymentNeeded;
+	private int itemsInCart;
+	
+	public int GetItemsInCart() { return itemsInCart; }
+}

@@ -1,0 +1,58 @@
+package MainApp;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class StoreFront 
+{
+	static Scanner mainScanner = new Scanner(System.in);
+	static List<String> productList = new ArrayList<String>();
+	
+	
+	public static void main(String[] args) 
+	{
+		List<String> cartList = new ArrayList<String>();
+		RandomName.PopulateNameArray();
+        int balance = 100;
+        int mainInput = 0;
+        int amountOfProducts = 100;
+
+        productList.clear();
+        SetProducts(amountOfProducts);
+        
+        while(mainInput != 3)
+        {
+            if(mainInput == 0)
+            {
+                System.out.println("---------------------");
+                System.out.println("Welcome to the Store! \n 1: Products \n 2: Cart \n 3: Exit\n" + "Balance: " + balance);
+                System.out.println("---------------------");
+                mainInput = mainScanner.nextInt();
+            }
+            switch(mainInput)
+            {
+                case 1: 
+
+                mainInput = 0;
+                break;
+                case 2: 
+
+                mainInput = 0;
+                break;
+
+                case 0: break;
+            }
+        }
+	}
+	
+	public static void SetProducts(int amount) 
+	{
+		for(int i = 0; i < amount; i++) 
+		{
+			
+		}
+		productList.add(null)
+	}
+
+}

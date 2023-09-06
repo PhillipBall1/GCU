@@ -1,0 +1,69 @@
+package MainApp;
+
+import java.util.List;
+
+public class ProductListManager
+{
+	private List<String> productStringList;
+	private List<Product> productList;
+	
+	public void AddItemToList(String item) {productStringList.add(item);}
+	
+	public void RemoveItemFromList(String input)
+	{
+		for(int i = 0; i < productStringList.size(); i++)
+		{
+			String nameString = productStringList.get(i).split("-")[0];
+			if(nameString.equals(input.split("-")[0])) 
+			{
+				productStringList.remove(i);
+			}
+		}
+		
+	}
+	
+	public List<String> GetList() {return productStringList;}
+	
+	public void SetList(List<String> newCartList) {productStringList = newCartList;}
+	
+	
+	
+	public void AddItemToProducts(Product item) {productList.add(item);}
+	
+	public void RemoveItemFromProducts(Product item){productList.remove(item);}
+	
+	public List<Product> GetProducts() {return productList;}
+	
+	public void SetProducts(List<Product> newCartProducts) {productList = newCartProducts;}
+	
+	/**
+	 * @param productType String that serves as the type
+	 * @param list String list that contains all products
+	 * @return The amount of products inside of the type
+	 */
+	public int GetProductTypeCount(String productType) 
+	{
+		int count = 0;
+		for(int i = 0; i < this.GetList().size(); i++) 
+		{
+			if(this.GetList().get(i).split("-")[3].equals(productType)) 
+			{
+				count++;
+			}
+		}
+		return count;
+	}
+	
+	/**
+	 * Populates first string list with products
+	 * @param amount takes amount of products user wants to display
+	 */
+	public void SetProducts(int amount) 
+	{
+		for(int i = 0; i < amount; i++) 
+		{
+			String productString = RandomName.GetRandomName();
+			AddItemToList(productString);
+		}
+	}
+}

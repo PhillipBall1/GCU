@@ -1,0 +1,37 @@
+package MainApp;
+
+import java.util.List;
+import java.util.Scanner;
+
+public class PurchaseProducts
+{
+	public static boolean PurchaseProduct(Cart cart, int balance, Scanner mainScanner, List<Product> cartList) 
+	{
+		boolean amountGreaterThanOne = cart.GetItemsInCart() > 1;
+		String purchaseString = amountGreaterThanOne? 
+				"\nReady to purchase your products for $" + cart.GetPaymentNeeded() 
+				+ "?\n 1: Yes\n 2: No" 
+				: "\nReady to purchase your product for $" + cart.GetPaymentNeeded() 
+				+ "?\n 1: Yes\n 2: No";
+		System.out.println(purchaseString);
+		
+		int input3 = mainScanner.nextInt();
+		String finalString = amountGreaterThanOne?
+				"\n\nProducts Purchased for $" + cart.GetPaymentNeeded() +"!"
+				+ "\nNew Balance: $" + balance
+				: "\n\nProduct Purchased for $" + cart.GetPaymentNeeded() +"!"
+				+ "\nNew Balance: $" + balance;
+		switch (input3)
+		{
+		
+		case 1: 
+			balance -= cart.GetPaymentNeeded();
+			System.out.println(finalString);
+			cartList.clear();
+			cart.SetItemsInCart(0);
+			cart.SetPaymentNeeded(0);
+			return true;
+		case 2: return false; 
+		}
+	}
+}

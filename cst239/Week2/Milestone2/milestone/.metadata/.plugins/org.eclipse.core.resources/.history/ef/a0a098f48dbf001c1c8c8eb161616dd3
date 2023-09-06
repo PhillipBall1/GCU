@@ -1,0 +1,39 @@
+package MainApp;
+
+import java.util.List;
+
+public class ProductListManager
+{
+	private List<String> productStringList;
+	private List<Product> productList;
+	
+	public void AddItemToList(String item) {productStringList.add(item);}
+	
+	public void RemoveItemFromList(String input)
+	{
+		for(int i = 0; i < productStringList.size(); i++)
+		{
+			String nameString = productStringList.get(i);
+			System.out.println(nameString + "\n" + input.split("-")[0]);
+			if(nameString.equals(input.split("-")[0])) 
+			{
+				productStringList.remove(i);
+			}
+		}
+		
+	}
+	
+	public List<String> GetList() {return productStringList;}
+	
+	public void SetList(List<String> newCartList) {productStringList = newCartList;}
+	
+	
+	
+	public void AddItemToProducts(Product item) {productList.add(item);}
+	
+	public void RemoveItemFromProducts(Product item){productList.remove(item);}
+	
+	public List<Product> GetProducts() {return productList;}
+	
+	public void SetProducts(List<Product> newCartProducts) {productList = newCartProducts;}
+}

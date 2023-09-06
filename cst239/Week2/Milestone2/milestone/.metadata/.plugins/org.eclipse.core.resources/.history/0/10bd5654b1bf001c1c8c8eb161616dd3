@@ -1,0 +1,14 @@
+package MainApp;
+
+import java.util.List;
+import java.util.Scanner;
+
+public class ChooseProduct
+{
+	public boolean ChooseProductForCart(Scanner mainScanner, List<Product> productList) 
+	{
+		
+		return false;
+	}
+	
+}

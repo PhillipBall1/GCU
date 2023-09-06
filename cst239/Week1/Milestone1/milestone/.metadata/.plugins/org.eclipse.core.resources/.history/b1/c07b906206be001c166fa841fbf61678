@@ -1,0 +1,19 @@
+package MainApp;
+
+public class Cart
+{
+	private float paymentNeeded = 0;
+	private int itemsInCart = 0;
+	
+	public int GetItemsInCart() { return itemsInCart; }
+	public float PaymentNeeded() { return paymentNeeded; }
+	
+	public void SetItemsInCart() { return itemsInCart; }
+	public void SetPaymentNeeded() { return paymentNeeded; }
+	
+	public void IncreasePaymentNeeded(float amount) {paymentNeeded = PaymentNeeded() + amount; }
+	public void IncreaseItemsInCart(int amount) {itemsInCart = GetItemsInCart() + amount; }
+	
+	public void DecreasePaymentNeeded(float amount) {paymentNeeded = PaymentNeeded() + amount; }
+	public void DecreaseItemsInCart(int amount) {itemsInCart = GetItemsInCart() + amount; }
+}

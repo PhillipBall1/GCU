@@ -1,0 +1,8 @@
+package MainApp;
+
+import java.io.InputStream;
+
+public class FileToProducts
+{
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 4 elements from project &apos;Milestone&apos;&#x0D;&#x0A;- Original project: &apos;Milestone&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     InputProducts.json&#x0D;&#x0A;     jackson-annotations-2.13.2.jar&#x0D;&#x0A;     jackson-core-2.13.2.jar&#x0D;&#x0A;     jackson-databind-2.13.2.2.jar" description="Delete elements" element1="jackson-core-2.13.2.jar" element2="InputProducts.json" element3="jackson-annotations-2.13.2.jar" element4="jackson-databind-2.13.2.2.jar" elements="0" flags="589830" id="org.eclipse.jdt.ui.delete" resources="4" stamp="1652063436252" subPackages="false" version="1.0"/>
+</session>

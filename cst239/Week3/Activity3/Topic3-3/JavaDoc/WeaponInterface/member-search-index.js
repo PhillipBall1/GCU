@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"app","c":"WeaponInterface","l":"Activate(boolean)"},{"p":"app","c":"WeaponInterface","l":"FireWeapon()"},{"p":"app","c":"WeaponInterface","l":"FireWeapon(int)"}];updateSearchResults();

@@ -1,0 +1,13 @@
+package MainApp;
+
+public class Cart
+{
+	private float paymentNeeded;
+	private int itemsInCart;
+	
+	public int ItemsInCart() { return itemsInCart; }
+	public float PaymentNeeded() { return paymentNeeded; }
+	
+	public void IncreasePaymentNeeded(float amount) {paymentNeeded = PaymentNeeded() + amount; }
+	public void IncreasePaymentNeeded(float amount) {paymentNeeded = PaymentNeeded() + amount; }
+}

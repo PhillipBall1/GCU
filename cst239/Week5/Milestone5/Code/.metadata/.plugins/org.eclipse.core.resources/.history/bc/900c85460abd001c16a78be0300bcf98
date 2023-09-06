@@ -1,0 +1,11 @@
+package MainApp;
+
+public class RandomName
+{
+	private String[] randomNames;
+	
+	public void PopulateNameArray()
+	{
+		
+	}
+}

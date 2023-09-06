@@ -1,0 +1,14 @@
+package MainApp;
+
+import java.util.List;
+import java.util.Scanner;
+
+public class PurchaseProducts
+{
+	public boolean PurchaseProduct(Cart cart, float balance, Scanner mainScanner, List<Product> cartList) 
+	{
+		
+		
+		return false;
+	}
+}

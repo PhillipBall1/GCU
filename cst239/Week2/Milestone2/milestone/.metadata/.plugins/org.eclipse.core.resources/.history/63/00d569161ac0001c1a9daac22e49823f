@@ -1,0 +1,142 @@
+package MainApp;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class ProductListManager
+{
+	private List<String> productStringList;
+	private List<Product> productList;
+	
+	/**
+	 * Adds a string of a Product to productStringList
+	 * @param item Product string to add
+	 */
+	public void AddItemToList(String item) {productStringList.add(item);}
+	/**
+	 * Removes a string of a Product from productStringList
+	 * @param input Product string to remove
+	 */
+	public void RemoveItemFromList(String input)
+	{
+		for(int i = 0; i < productStringList.size(); i++)
+		{
+			String nameString = productStringList.get(i).split("-")[0];
+			if(nameString.equals(input.split("-")[0])) 
+			{
+				int inputQuant = Integer.parseInt(input.split("-")[3]);
+				if(inputQuant - 1 > 0) 
+				{
+					productStringList.get(i).split("-")[3] = toString(inputQuant - 1);
+				}
+				else
+				{
+					productStringList.remove(i);
+				}
+				
+			}
+		}
+		
+	}
+	/**
+	 * @return List<String> productStringList
+	 */
+	public List<String> GetList() {return productStringList;}
+	/**
+	 * @param newCartList Sets the productStringList to the input
+	 */
+	public void SetList(List<String> newCartList) {productStringList = newCartList;}
+	
+	/**
+	 * Adds a Product to productList
+	 * @param item Product to add
+	 */
+	public void AddItemToProducts(Product item) {productList.add(item);}
+	/**
+	 * Removes a Product from productList
+	 * @param item Product to remove
+	 */
+	public void RemoveItemFromProducts(Product item){productList.remove(item);}
+	/**
+	 * @return List<Product> productList
+	 */
+	public List<Product> GetProducts() {return productList;}
+	/**
+	 * @param newCartProducts Sets the productList to the input
+	 */
+	public void SetProducts(List<Product> newCartProducts) {productList = newCartProducts;}
+	
+	/**
+	 * @param productType String that serves as the type
+	 * @param list String list that contains all products
+	 * @return The amount of products inside of the type
+	 */
+	public int GetProductTypeCount(String productType) 
+	{
+		int count = 0;
+		for(int i = 0; i < this.GetList().size(); i++) 
+		{
+			if(this.GetList().get(i).split("-")[3].equals(productType)) 
+			{
+				count++;
+			}
+		}
+		return count;
+	}
+	
+	/**
+	 * Populates first string list with products
+	 * @param amount takes amount of products user wants to display
+	 */
+	public void SetAllProducts(int amount) 
+	{
+		for(int i = 0; i < amount; i++) 
+		{
+			String productString = RandomName.GetRandomName();
+			this.AddItemToList(productString);
+		}
+	}
+	
+	/**
+	 * Converts a list of strings to a list of products
+	 * @param list String list
+	 * @param cart Whether this is populating the users cart or not
+	 * @param outProducts Output Product List
+	 */
+	public void StringToProductList(List<String> list, boolean cart, List<Product> outProducts)
+	{
+		outProducts.clear();
+		Map<String, Integer> duplicates = new HashMap<String, Integer>(); 
+	      for (String str : list)
+	      { 
+	         if (duplicates.containsKey(str)) 
+	         { 
+	            duplicates.put(str, duplicates.get(str) + 1); 
+	         } 
+	         else 
+	         { 
+	            duplicates.put(str, 1); 
+	         } 
+	      } 
+	 
+	      for (Map.Entry<String, Integer> entry : duplicates.entrySet()) 
+	      { 
+	    	  	String[] splitString = entry.getKey().split("-");
+				String name = splitString[0];
+				String description = splitString[1];
+				float price = Float.parseFloat(splitString[2]);
+				String type = splitString[3];
+				Product product = null;
+				if(cart)
+				{
+					product = new Product(name, description, price * entry.getValue(), entry.getValue(), type);
+				}
+				else 
+				{
+					product = new Product(name, description, price, entry.getValue(), type);
+				}
+				outProducts.add(product); 
+	      } 
+	}
+}

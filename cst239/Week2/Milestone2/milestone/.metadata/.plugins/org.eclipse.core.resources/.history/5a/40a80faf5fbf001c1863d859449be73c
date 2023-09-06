@@ -1,0 +1,27 @@
+package MainApp;
+
+import java.util.List;
+import java.util.Scanner;
+
+
+public class RemoveProduct
+{
+	public boolean RemoveProducts(Scanner mainScanner, List<Product> productList, List<String> stringList, Cart cart) 
+	{
+		System.out.println("\nDo you want to remove any products?\n 1: Yes\n 2: No");
+		int input = mainScanner.nextInt();
+		
+		switch (input)
+		{
+		case 1: 
+			System.out.println("\nEnter number of product you want to remove");
+			int input2 = mainScanner.nextInt();
+			cart.DecreaseItemsInCart(1);
+			cart.DecreasePaymentNeeded(productList.get(input2 - 1).GetPrice());
+			secondList.remove(input2 - 1);
+			return true;
+		case 2: return false;
+		}
+		return false;
+	}
+}

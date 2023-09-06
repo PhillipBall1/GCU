@@ -1,0 +1,318 @@
+package MainApp;
+
+import java.text.DecimalFormat;
+import java.util.*;
+
+import javax.swing.plaf.synth.Region;
+
+public class StoreFront 
+{
+	static Scanner mainScanner = new Scanner(System.in);
+	static ProductListManager productListManager = new ProductListManager();
+	static Cart cart = new Cart();
+	private static final DecimalFormat balanceFormat = new DecimalFormat("0.00");
+	static int mainInput;
+	static float balance;
+	static String topString;
+	/**
+	 * Main function where the menu gets displayed and takes user input
+	 * @param args
+	 */
+	public static void main(String[] args) 
+	{
+		RandomName.PopulateNameArray();
+		
+		int amountOfProducts = 200;
+		
+		List<String> stringCartList = new ArrayList<String>();
+		List<Product> productCartList = new ArrayList<Product>();
+		
+		cart.SetCartList(stringCartList);
+		cart.SetCartProducts(productCartList);
+		
+		List<String> stringProductList = new ArrayList<String>();
+		List<Product> productList = new ArrayList<Product>();
+		
+		productListManager.SetList(stringProductList);
+		productListManager.SetProducts(productList);
+		
+		productListManager.SetAllProducts(amountOfProducts);
+		
+        balance = 100;
+        mainInput = 0;
+        
+        while(mainInput != 3)
+        {
+            switch(mainInput)
+            {
+            	case 0: MenuMain(); break;
+                case 1: ProductsMain(); break;
+                case 2: CartMain(); break;
+            }
+        }
+	}
+	
+	//Main Functions =======================================================================================
+	
+	/**
+	 * Display Main Menu for User
+	 */
+	public static void MenuMain()
+	{
+		System.out.println("---------------------");
+        System.out.println("Welcome to the Store!"
+        		+ "\n 1: Products"
+        		+ "\n 2: Cart: " + cart.GetItemsInCart()
+        		+ "\n 3: Exit\n" + 
+        		"Balance: $" + balanceFormat.format(balance));
+        System.out.println("---------------------");
+        mainInput = mainScanner.nextInt();
+	}
+	
+	/**
+	 * Starts the Products UI and enters main product menu functions
+	 */
+	public static void ProductsMain()
+	{
+		System.out.println("What type of product are you looking for?"
+				+ "\n 1: Animal Products: " + productListManager.GetProductTypeCount("Animal")
+				+ "\n 2: Grain Products: " + productListManager.GetProductTypeCount("Grain")
+				+ "\n 3: Snack Products: " + productListManager.GetProductTypeCount("Snack")
+				+ "\n 4: Beverage Products: " + productListManager.GetProductTypeCount("Beverage")
+				+ "\n 5: Dairy Products: " + productListManager.GetProductTypeCount("Dairy")
+				+ "\n 6: Produce Products: " + productListManager.GetProductTypeCount("Produce")
+				+ "\n 7: Premade Products: " + productListManager.GetProductTypeCount("Premade")
+				+ "\n 8: Back To Menu"
+				);
+		
+		int input = mainScanner.nextInt();
+		
+		if(ProductMenu(input))
+		{
+			System.out.println("\n\nEnter number of what you want to add to cart!");
+			int input2 = mainScanner.nextInt();
+			Product product = ChooseProducts(input2);
+			ProductToCart(product);
+		}
+		else 
+		{
+			return;
+		}
+	}
+	
+	/**
+	 * Starts the Cart UI and enters main cart menu functions
+	 */
+	public static void CartMain() 
+	{
+		if(cart.GetCartList().size() > 0) 
+		{
+			DisplayMenu(true,cart.GetCartList(), cart.GetCartProducts(), null);
+			System.out.println("\nDo you want to remove any products?\n 1: Yes\n 2: No");
+			int input = mainScanner.nextInt();
+			if(RemoveProduct(input)) 
+			{
+				DisplayMenu(true,cart.GetCartList(), cart.GetCartProducts(), null);
+			}
+			else 
+			{
+				ConfirmCart();
+			}
+		}
+	}
+
+	//Product Menu Functions ===============================================================================
+	
+	/**
+	 * Displays products and different product types
+	 * @param input User input from scanners
+	 * @return True or False based on users inputs
+	 */
+	public static boolean ProductMenu(int input) 
+	{
+		List<String> currentListToDisplay = new ArrayList<String>();
+		
+		String typeString = null;
+
+		if(input <= 8 && input >= 1) 
+		{
+			switch(input) 
+			{
+			case 1: typeString = "Animal"; break;
+			case 2: typeString = "Grain"; break;
+			case 3: typeString = "Snack"; break;
+			case 4: typeString = "Beverage"; break;
+			case 5: typeString = "Dairy"; break;
+			case 6: typeString = "Produce"; break;
+			case 7: typeString = "Premade"; break;
+			}
+			
+			if(input == 8) 
+			{
+				mainInput = 0;
+				return false;
+			}
+			
+			for(int i = 0; i < productListManager.GetList().size(); i++)
+			{
+				String[] splitString = productListManager.GetList().get(i).split("-");
+				String type = splitString[3];
+				if(type.equals(typeString)) 
+				{
+					currentListToDisplay.add(productListManager.GetList().get(i));
+				}
+				
+			}
+			if(!(currentListToDisplay.size() > 0)) 
+			{
+				System.out.println("All out of " + typeString + " Products");
+				return false;
+			}
+			DisplayMenu(false,currentListToDisplay, productListManager.GetProducts(), typeString);
+        	return true;
+		}
+		else 
+		{
+			System.out.println("Input did not equal an option");;
+			mainInput = 0;
+			return false;
+		}
+	}
+	
+	/**
+	 * Allows user to select a Product from displayed menu
+	 * @param input
+	 * @return
+	 */
+	public static Product ChooseProducts(int input) 
+	{
+		Product chosenProduct = productListManager.GetProducts().get(input - 1);	
+		Product itemToBeInCart = new Product(
+				chosenProduct.GetName(), 
+				chosenProduct.GetDescription(), 
+				chosenProduct.GetPrice(), 
+				1,
+				chosenProduct.GetType());
+		
+		itemToBeInCart.DecreaseQuantity(1);
+		
+		if(itemToBeInCart.GetQuantity() <= 0) 
+		{
+			productListManager.RemoveItemFromList(itemToBeInCart.ProductToString(itemToBeInCart));
+		}
+		return itemToBeInCart;
+		
+	}
+	
+	public static void ProductToCart(Product itemToBeInCart) 
+	{
+		String newItemString = itemToBeInCart.ProductToString(itemToBeInCart);
+		cart.AddItemToCart(newItemString);
+		cart.IncreasePaymentNeeded(itemToBeInCart.GetPrice());
+		cart.IncreaseItemsInCart(1);
+		System.out.println("\n" + itemToBeInCart.GetName() +" successfully added to cart!");
+		
+		System.out.println("\nDo you want to continue shopping?\n 1: Yes\n 2: No");
+		String inputString = mainScanner.next();
+		switch (inputString)
+		{
+		case "1": mainInput = 1; break; 
+		case "2": mainInput = 0; break;
+		}
+	}
+
+	
+	//Cart Menu Functions ==================================================================================
+	
+	public static boolean RemoveProduct(int input) 
+	{
+		switch (input)
+		{
+		case 1: 
+			System.out.println("\nEnter number of product you want to remove");
+			int input2 = mainScanner.nextInt();
+			cart.DecreaseItemsInCart(1);
+			cart.DecreasePaymentNeeded(cart.GetCartProducts().get(input2 - 1).GetPrice() / 
+					cart.GetCartProducts().get(input2 - 1).GetQuantity());
+			cart.GetCartList().remove(input2 - 1);
+			return false;
+		case 2: return true;
+		}
+		return true;
+	}
+
+	public static void ConfirmCart() 
+	{
+		boolean amountGreaterThanOne = cart.GetItemsInCart() > 1;
+		
+		String purchaseString = amountGreaterThanOne? 
+				"\nReady to purchase your products for $" + cart.GetPaymentNeeded() 
+				+ "?\n 1: Yes\n 2: No" 
+				: "\nReady to purchase your product for $" + cart.GetPaymentNeeded() 
+				+ "?\n 1: Yes\n 2: No";
+		
+		System.out.println(purchaseString);
+		
+		int input = mainScanner.nextInt();
+		PurchaseProductsInCart(input);
+	}
+	
+	public static void PurchaseProductsInCart(int input) 
+	{		
+		boolean amountGreaterThanOne = cart.GetItemsInCart() > 1;
+		switch (input)
+		{
+		case 1: 
+			if(cart.GetItemsInCart() >= 0 && balance >= cart.GetPaymentNeeded())
+			{
+				balance -= cart.GetPaymentNeeded();
+				String finalString = amountGreaterThanOne?
+						"\n\nProducts Purchased for $" + cart.GetPaymentNeeded() +"!"
+						+ "\nNew Balance: $" + balanceFormat.format(balance)
+						: "\n\nProduct Purchased for $" + cart.GetPaymentNeeded() +"!"
+						+ "\nNew Balance: $" + balanceFormat.format(balance);
+				System.out.println(finalString);
+				
+				cart.GetCartProducts().clear();
+				cart.SetItemsInCart(0);
+				cart.SetPaymentNeeded(0);
+			}
+			break;
+		case 2: System.out.println("Not Enough Money..."); break; 
+		}
+		mainInput = 0;
+	}
+	
+	//Menu Display Functions ===============================================================================
+	
+	public static void DisplayMenu(boolean cartMenu, List<String> stringList, List<Product>  productList, String type)
+	{
+		UpdateTopString(cartMenu, type);
+		System.out.println(topString);
+		int count = 1;
+		productListManager.StringToProductList(stringList, cartMenu, productList);
+		for(int i = 0 ; i < productList.size(); i ++)
+		{
+			System.out.println("------" + count + "------");
+			System.out.println(productList.get(i).GetName()); 
+			if(!cartMenu) System.out.println(productList.get(i).GetDescription()); 
+			System.out.println("$" + productList.get(i).GetPrice()); 
+			System.out.println("Quantity: " +productList.get(i).GetQuantity()); 
+			System.out.println(count < 9 ? "-------------" : "--------------");
+			count++;
+		}
+	}
+	
+	public static void UpdateTopString(boolean cartR, String type) 
+	{
+		if(cartR) 
+		{
+			topString = "======== Cart " + cart.GetItemsInCart() + " ========";
+		}
+		else 
+		{
+			topString = "======== " + type + " Products ========";
+		}
+	}
+
+}

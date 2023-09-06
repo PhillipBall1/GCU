@@ -1,0 +1,42 @@
+package MainApp;
+
+public class RandomName
+{
+	private String[] randomNames = new String[30];
+	
+	public void PopulateNameArray()
+	{
+		randomNames[0] = "";
+		randomNames[1] = "";
+		randomNames[2] = "";
+		randomNames[3] = "";
+		randomNames[4] = "";
+		randomNames[5] = "";
+		randomNames[6] = "";
+		randomNames[7] = "";
+		randomNames[8] = "";
+		randomNames[9] = "";
+		randomNames[10] = "";
+		randomNames[11] = "";
+		randomNames[12] = "";
+		randomNames[13] = "";
+		randomNames[14] = "";
+		randomNames[15] = "";
+		randomNames[16] = "";
+		randomNames[17] = "";
+		randomNames[18] = "";
+		randomNames[19] = "";
+		randomNames[20] = "";
+		randomNames[21] = "";
+		randomNames[22] = "";
+		randomNames[23] = "";
+		randomNames[24] = "";
+		randomNames[25] = "";
+		randomNames[26] = "";
+		randomNames[27] = "";
+		randomNames[28] = "";
+		randomNames[29] = "";
+		randomNames[30] = "";
+		
+	}
+}

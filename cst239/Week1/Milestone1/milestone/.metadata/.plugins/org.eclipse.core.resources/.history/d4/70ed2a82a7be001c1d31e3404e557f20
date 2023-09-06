@@ -1,0 +1,261 @@
+package MainApp;
+
+import java.util.*;
+
+public class StoreFront 
+{
+	static Scanner mainScanner = new Scanner(System.in);
+	static List<String> firstList = new ArrayList<String>();
+	static List<String> secondList = new ArrayList<String>();
+	static List<Product> productList = new ArrayList<Product>();
+	static List<Product> cartList = new ArrayList<Product>();
+	static Cart cart = new Cart();
+	static int mainInput;
+	static float balance;
+	/**
+	 * Main function where the menu gets displayed and takes user input
+	 * @param args
+	 */
+	public static void main(String[] args) 
+	{
+		
+		RandomName.PopulateNameArray();
+        balance = 100;
+        mainInput = 0;
+        int amountOfProducts = 500;
+
+        SetProducts(amountOfProducts);
+        StringToProductList(firstList, false, productList);
+        while(mainInput != 3)
+        {
+            switch(mainInput)
+            {
+            	case 0: 
+                	System.out.println("---------------------");
+                    System.out.println("Welcome to the Store!\n 1: Products \n 2: Cart \n 3: Exit\n" + "Balance: $" + balance);
+                    System.out.println("---------------------");
+                    mainInput = mainScanner.nextInt();
+                    break;
+                case 1: 
+                	DisplayProducts();
+                	break;
+                case 2: 
+                	DisplayCart();
+                	break;
+
+                
+            }
+        }
+	}
+	
+	/**
+	 * Populates first string list with products
+	 * @param amount takes amount of products user wants to display
+	 */
+	public static void SetProducts(int amount) 
+	{
+		for(int i = 0; i < amount; i++) 
+		{
+			String productString = RandomName.GetRandomName();
+			firstList.add(productString);
+		}
+	}
+	/**
+	 * NOT IN USE YET
+	 * @param productString 
+	 * @param list
+	 * @param outProducts
+	 */
+	public static void RemoveSpecificProduct(String productString, List<String> list, List<Product> outProducts)
+	{
+		outProducts.clear();
+		Map<String, Integer> duplicates = new HashMap<String, Integer>(); 
+	      for (String str : list)
+	      { 
+	         if (duplicates.containsKey(str)) 
+	         { 
+	            duplicates.put(str, duplicates.get(str) + 1); 
+	         } 
+	         else 
+	         { 
+	            duplicates.put(str, 1); 
+	         } 
+	      } 
+	      if (duplicates.containsKey(productString)) 
+	         { 
+	            duplicates.put(productString, duplicates.get(productString) - 1); 
+	         } 
+	 
+	      for (Map.Entry<String, Integer> entry : duplicates.entrySet()) 
+	      { 
+	    	  	String[] splitString = entry.getKey().split("-");
+				String name = splitString[0];
+				String description = splitString[1];
+				float price = Float.parseFloat(splitString[2]);
+				Product product = null;
+				product = new Product(name, description, price * entry.getValue(), entry.getValue());
+				outProducts.add(product); 
+	      } 
+	}
+	/**
+	 * Converts a list of strings to a list of products
+	 * @param list String list
+	 * @param cart Whether this is populating the users cart or not
+	 * @param outProducts Output Product List
+	 */
+	public static void StringToProductList(List<String> list, boolean cart, List<Product> outProducts)
+	{
+		outProducts.clear();
+		Map<String, Integer> duplicates = new HashMap<String, Integer>(); 
+	      for (String str : list)
+	      { 
+	         if (duplicates.containsKey(str)) 
+	         { 
+	            duplicates.put(str, duplicates.get(str) + 1); 
+	         } 
+	         else 
+	         { 
+	            duplicates.put(str, 1); 
+	         } 
+	      } 
+	 
+	      for (Map.Entry<String, Integer> entry : duplicates.entrySet()) 
+	      { 
+	    	  	String[] splitString = entry.getKey().split("-");
+				String name = splitString[0];
+				String description = splitString[1];
+				float price = Float.parseFloat(splitString[2]);
+				Product product = null;
+				if(cart)
+				{
+					product = new Product(name, description, price * entry.getValue(), entry.getValue());
+				}
+				else 
+				{
+					product = new Product(name, description, price, entry.getValue());
+				}
+				outProducts.add(product); 
+	      } 
+	}
+	/**
+	 * 
+	 */
+	public static void DisplayProducts()
+	{
+		int count = 1;
+		for(int i = 0 ; i < productList.size(); i ++)
+		{
+			System.out.println("------" + count + "------");
+			System.out.println(productList.get(i).GetName() + "\n" +
+					productList.get(i).GetDescription() + "\n" +
+					"$" + productList.get(i).GetPrice() + "\n" +
+					"Stock: " + productList.get(i).GetQuantity() + "\n" 		
+					);
+			count++;
+		}
+		ChooseProduct();
+	}
+	
+	public static void ChooseProduct() 
+	{
+		System.out.println("\n\nEnter number of what you want to add to cart!");
+		int input = mainScanner.nextInt();
+		Product chosenProduct = productList.get(input - 1);
+		chosenProduct.DecreaseQuantity(1);
+		if(chosenProduct.GetQuantity() <= 0) 
+		{
+			productList.remove(chosenProduct);
+		}
+		Product itemToBeInCart = new Product(
+				chosenProduct.GetName(), 
+				chosenProduct.GetDescription(), 
+				chosenProduct.GetPrice(), 
+				1);
+		
+		String newItemString = itemToBeInCart.ProductToString(itemToBeInCart);
+		secondList.add(newItemString);
+		cart.IncreasePaymentNeeded(itemToBeInCart.GetPrice());
+		cart.IncreaseItemsInCart(1);
+		System.out.println("\n" + itemToBeInCart.GetName() +" successfully added to cart!");
+		
+		System.out.println("\nDo you want to continue shopping?\n 1: Yes\n 2: No");
+		String inputString = mainScanner.next();
+		switch (inputString)
+		{
+		case "1": mainInput = 1; break;
+		case "2": mainInput = 0; break;	
+		}
+	}
+	
+	public static void DisplayCart()
+	{
+		System.out.println("\n\n====== Cart "+ cart.GetItemsInCart() +"======");
+		int count = 1;
+		StringToProductList(secondList, true, cartList);
+		for(int i = 0 ; i < cartList.size(); i ++)
+		{
+			System.out.println("------" + count + "------");
+			System.out.println(cartList.get(i).GetName() + "\n" +
+					"$" + cartList.get(i).GetPrice() + "\n" +
+					"Quantity: " + cartList.get(i).GetQuantity() + "\n" 		
+					);
+			count++;
+		}
+		RemoveOrPurchaseProducts();
+	}
+	
+	public static void RemoveOrPurchaseProducts() 
+	{
+		System.out.println("\nDo you want to remove any products?\n 1: Yes\n 2: No");
+		int input = mainScanner.nextInt();
+		
+		switch (input)
+		{
+		case 1: 
+			System.out.println("\nEnter number of product you want to remove");
+			int input2 = mainScanner.nextInt();
+			cart.DecreaseItemsInCart(1);
+			cart.DecreasePaymentNeeded(cartList.get(input2 - 1).GetPrice());
+			secondList.remove(cartList.get(input2 - 1).ProductToString(cartList.get(input2 - 1)));
+			//RemoveSpecificProduct(cartList.get(input2 - 1).ProductToString(cartList.get(input2 - 1))
+			//		, secondList, cartList);
+			DisplayCart();
+			break;
+		}
+		if(cart.GetItemsInCart() > 1)
+		{
+			System.out.println("\nReady to purchase your products for $" + cart.GetPaymentNeeded() 
+			+ "?\n 1: Yes\n 2: No");
+		}
+		else 
+		{
+			System.out.println("\nReady to purchase your product for $" + cart.GetPaymentNeeded() 
+			+ "?\n 1: Yes\n 2: No");
+		}
+		
+		int input3 = mainScanner.nextInt();
+		switch (input3)
+		{
+		case 1: 
+			balance -= cart.GetPaymentNeeded();
+			if(cart.GetItemsInCart() > 1) 
+			{
+				System.out.println("\n\nProducts Purchased for $" + cart.GetPaymentNeeded() +"!"
+						+ "\nNew Balance: $" + balance);
+			}
+			else 
+			{
+				System.out.println("\n\nProduct Purchased for $" + cart.GetPaymentNeeded() +"!"
+						+ "\nNew Balance: $" + balance);
+			}
+			
+			cartList.clear();
+			cart.SetItemsInCart(0);
+			cart.SetPaymentNeeded(0);
+			mainInput = 0;
+			break;
+		case 2: mainInput = 0; break;
+		}
+	}
+
+}
