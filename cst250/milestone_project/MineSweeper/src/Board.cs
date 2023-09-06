@@ -21,12 +21,12 @@ public class Board
 	public int[] GetSize() { return size; }
 
 
-    public void SetupLiveNeighbors()
+    	public void SetupLiveNeighbors()
 	{
 
 		int cellCount = size[0] * size[1];
-        //set the cell array equal to the width * height of the board
-        cells = new Cell[cellCount];
+        	//set the cell array equal to the width * height of the board
+        	cells = new Cell[cellCount];
 
 		//x for loop
 		for(int i = 0; i < size[0]; i++)
@@ -53,13 +53,13 @@ public class Board
 		start++;
 	}
 
-    //start for loop for each square to be tested
-    private void CalculateLiveNeighbors()
+    	//start for loop for each square to be tested
+    	private void CalculateLiveNeighbors()
 	{
 		for(int i = 0; i < cells.Length; i++)
 		{
 			CheckSquares(cells[i]);
-        }
+        	}
 	}
 
 	//checks the possibility from each square surrounding the initial square
@@ -67,43 +67,43 @@ public class Board
 	{
 		int liveCount = 0;
 
-        //each possible pos for row -1
-        liveCount += FindCellInPos(cell, -1, -1);
+        	//each possible pos for row -1
+        	liveCount += FindCellInPos(cell, -1, -1);
 		liveCount += FindCellInPos(cell, -1, 0);
 		liveCount += FindCellInPos(cell, -1, 1);
 
 		//each possible pos for row 0
-        liveCount += FindCellInPos(cell, 0, -1);
-        liveCount += FindCellInPos(cell, 0, 1);
+        	liveCount += FindCellInPos(cell, 0, -1);
+        	liveCount += FindCellInPos(cell, 0, 1);
 
 		//each possible pos for row 1
-        liveCount += FindCellInPos(cell, 1, -1);
-        liveCount += FindCellInPos(cell, 1, 0);
-        liveCount += FindCellInPos(cell, 1, 1);
+        	liveCount += FindCellInPos(cell, 1, -1);
+        	liveCount += FindCellInPos(cell, 1, 0);
+        	liveCount += FindCellInPos(cell, 1, 1);
 
 		//check the starting cell
 		if(cell.GetLive()) liveCount += 1;
 
 		//set the live neighbors on the cell (min: 0, max: 9)
 		cell.SetLiveNeighbors(liveCount);
-    }
+    	}
 
 	//finds the cell in the designated pos 
 	private int FindCellInPos(Cell cell, int posX, int posY)
 	{
-        for (int i = 0; i < cells.Length; i++)
-        {
+        	for (int i = 0; i < cells.Length; i++)
+        	{
 
-            if(cells[i].GetColumn() == cell.GetColumn() - posY && cells[i].GetRow() == cell.GetRow() - posX)
+            		if(cells[i].GetColumn() == cell.GetColumn() - posY && cells[i].GetRow() == cell.GetRow() - posX)
 			{
-                // found a cell in set pos and check live
-                if (cells[i].GetLive())
+                		// found a cell in set pos and check live
+                		if (cells[i].GetLive())
 				{
 					return 1;
 				}
 			}
-        }
+        	}
 		//did not find a cell in set pos
-        return 0;
+        	return 0;
 	}
 }
