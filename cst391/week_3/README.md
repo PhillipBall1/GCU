@@ -32,7 +32,7 @@
 
 ![4](docs/4.png)
 
-**After buy buttoned has been pressed (Console)**
+**After buy button has been pressed (Console)**
 
 ![5](docs/5.png)
 
