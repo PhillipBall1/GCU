@@ -169,26 +169,11 @@ class Program
 				continue;
 			}
 
-			//used for switch statement so I don't have to nest a bunch of if loops to display text
-			int num = -1;
-			
-			//used to make the switch statement look cleaner
-			string y = board.GetCells()[i].GetLiveNeighbors().ToString();
-			
 			//if cells live place X, else if cell is not numbered place nothing, else cell is numbered
 			// place the number
-			if (board.GetCells()[i].GetLive() || board.GetCells()[i].GetMarked()) num = 0;
-			else if (board.GetCells()[i].GetLiveNeighbors() == 0) num = 1;
-			else num = 2;
-			
-			switch(num)
-			{
-				case 0: Console.Write("[ " + "X" + " ]"); break;
-				case 1: Console.Write("[ " + " " + " ]"); break;
-				case 2: Console.Write("[ " +  y  + " ]"); break;
-			}
-			
-			
+			if (board.GetCells()[i].GetLive() || board.GetCells()[i].GetMarked()) Console.Write("[ " + "X" + " ]");
+			else if (board.GetCells()[i].GetLiveNeighbors() == 0) Console.Write("[ " + " " + " ]");
+			else Console.Write("[ " +  board.GetCells()[i].GetLiveNeighbors().ToString()  + " ]");
 		}
 	}
 	
@@ -214,20 +199,9 @@ class Program
 				l++;
 			}
 
-			int num = -1;
-			
-			string y = board.GetCells()[i].GetLiveNeighbors().ToString();
-			
-			if (board.GetCells()[i].GetLive()) num = 0;
-			else if (board.GetCells()[i].GetLiveNeighbors() == 0) num = 1;
-			else num = 2;
-			
-			switch(num)
-			{
-				case 0: Console.Write("[ " + "X" + " ]"); break;
-				case 1: Console.Write("[ " + " " + " ]"); break;
-				case 2: Console.Write("[ " +  y  + " ]"); break;
-			}
+			if (board.GetCells()[i].GetLive() || board.GetCells()[i].GetMarked()) Console.Write("[ " + "X" + " ]");
+			else if (board.GetCells()[i].GetLiveNeighbors() == 0) Console.Write("[ " + " " + " ]");
+			else Console.Write("[ " +  board.GetCells()[i].GetLiveNeighbors().ToString()  + " ]");
 		}
 	}
 }
