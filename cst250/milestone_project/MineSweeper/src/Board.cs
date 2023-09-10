@@ -47,9 +47,9 @@ public class Board
 		CalculateLiveNeighbors();
 	}
 
-	private void CreateCell(int k, int j, bool chance)
+	private void CreateCell(int i, int j, bool chance)
 	{
-		cells[start] = new Cell(k, j, chance);
+		cells[start] = new Cell(i, j, chance);
 		start++;
 	}
 

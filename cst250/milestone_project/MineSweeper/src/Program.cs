@@ -5,7 +5,8 @@ class Program
 	
 	public static void Main(string[] args)
 	{
-		board = SetupNewBoard(10, 90);
+		int size = 5;
+		board = SetupNewBoard(size, 90);
 
 		int game = 0;
 		
@@ -45,7 +46,7 @@ class Program
 				}
 				else
 				{
-					board = SetupNewBoard(10, 90);
+					board = SetupNewBoard(size, 90);
 				}
 			}
 			
@@ -63,7 +64,7 @@ class Program
 				}
 				else
 				{
-					board = SetupNewBoard(10, 90);
+					board = SetupNewBoard(size, 90);
 				}
 			}
 		}
@@ -81,7 +82,7 @@ class Program
 			Console.WriteLine("Please enter a valid row");
 			inputRow = int.Parse(Console.ReadLine());
 		}
-		return inputRow * 10;
+		return inputRow * board.GetSize()[0];
 	}
 	
 	//simplifies the column input into method for reusability
@@ -131,7 +132,8 @@ class Program
 			if(i % board.GetSize()[0] == 0)
 			{
 				Console.WriteLine("");
-				Console.Write("--{0}--", l);
+				if(l > 9)Console.Write("--{0}--", l);
+				else Console.Write("--{0} --", l);
 				l++;
 			}
 
