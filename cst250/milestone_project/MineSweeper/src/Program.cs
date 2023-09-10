@@ -2,10 +2,12 @@ using System;
 class Program
 {
 	static Board board;
+	static int size = 5;
+	static int difficulty = 90;
 	
 	public static void Main(string[] args)
 	{
-		int size = 5;
+		
 		board = SetupNewBoard(size, 90);
 
 		int game = 0;
@@ -32,44 +34,70 @@ class Program
 			//reveal that tile with recursion to reveal every valid pos
 			int reveal = board.RevealCells(board.GetCells()[getCorrectTile]);
 			
-			//Game lost
-			if(reveal == -1)
-			{
-				Console.WriteLine("You hit a bomb :(");
-				Console.WriteLine("REVEALED BOARD");
-				PrintBoard(board);
-				Console.WriteLine("");
-				Console.WriteLine("Play Again? \n1: Yes \n2: No");
-				if(int.Parse(Console.ReadLine()) != 1)
-				{
-					game = -1;
-				}
-				else
-				{
-					board = SetupNewBoard(size, 90);
-				}
-			}
-			
-			//Game won
-			if(reveal == 1)
-			{
-				Console.WriteLine("You beat the game!");
-				Console.WriteLine("REVEALED BOARD");
-				PrintBoard(board);
-				Console.WriteLine("");
-				Console.WriteLine("Play Again? \n1: Yes \n2: No");
-				if(int.Parse(Console.ReadLine()) != 1)
-				{
-					game = -1;
-				}
-				else
-				{
-					board = SetupNewBoard(size, 90);
-				}
-			}
+			//goes into the game over user input section
+			game = RevealInputs(reveal);
 		}
 	}
 	
+	
+	//simplifies the 2 reveal outputs after the game is over
+	static int RevealInputs(int wl)
+	{
+		//no win or loss
+		if(wl == 0) return 0;
+		
+		//there was a win or loss, write appropriate line
+		if(wl == 1) Console.WriteLine("You beat the game!");
+		else Console.WriteLine("You hit a mine :(");
+		
+		//reveal board
+		Console.WriteLine("REVEALED BOARD");
+		PrintBoard(board);
+		
+		//asks user to play again, no then quit
+		if(GetUserInput("\nPlay Again? \n1: Yes \n2: No") == 2) return -1;
+		
+		//asks user to change size or difficulty, no then new board
+		if(GetUserInput("\nChange Board Size/Difficulty? \n1: Yes \n2: No") == 2)
+		{
+			board = SetupNewBoard(size, difficulty);
+			return 0;
+		}
+		
+		//sets new size from user input
+		size = GetUserInput("\nChange Size:");
+		
+		//sets new difficulty from user input
+		difficulty = GetUserInput("\nChange Difficulty (1-99, Higher = Easier):");
+
+		//creates board from new size and difficulty
+		board = SetupNewBoard(size, difficulty);
+		
+		return 0;
+	}
+	
+	//gets the users answer using while loops and try parse to make sure its correct
+	//using this to make it reusable and cleaner
+	static int GetUserInput(string statement)
+	{
+		int value = 0;
+		
+		//while loop to allow the user to make the right input
+		while (value == 0)
+		{
+			//write statement
+			Console.WriteLine(statement);
+			
+			//get answer
+			string answer = Console.ReadLine();
+			
+			//try parse the answer to set an actual value, if it works, return that value
+			//	if not, write invalid input
+			if(int.TryParse(answer, out value))return value; 
+			else Console.WriteLine("Invalid Input");
+		}
+		return 0;
+	}
 	
 	//simplifies the row input into method for reusability
 	static int GetRowInput()
