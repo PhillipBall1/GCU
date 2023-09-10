@@ -47,15 +47,19 @@ class Program
 		if(wl == 0) return 0;
 		
 		//there was a win or loss, write appropriate line
-		if(wl == 1) Console.WriteLine("You beat the game!");
-		else Console.WriteLine("You hit a mine :(");
+		if(wl == 1) Console.WriteLine("\nYou beat the game!");
+		else
+		{
+			Console.WriteLine("\nYou hit a mine :(");
+			//reveal board
+			Console.WriteLine("\nREVEALED BOARD");
+			PrintBoard(board);
+		} 
 		
-		//reveal board
-		Console.WriteLine("REVEALED BOARD");
-		PrintBoard(board);
+		
 		
 		//asks user to play again, no then quit
-		if(GetUserInput("\nPlay Again? \n1: Yes \n2: No") == 2) return -1;
+		if(GetUserInput("\n\nPlay Again? \n1: Yes \n2: No") == 2) return -1;
 		
 		//asks user to change size or difficulty, no then new board
 		if(GetUserInput("\nChange Board Size/Difficulty? \n1: Yes \n2: No") == 2)
