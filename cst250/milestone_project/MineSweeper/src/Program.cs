@@ -17,19 +17,19 @@ class Program
 			PrintBoardForLiveGame(board);
 			
 			//mark bombs
-			Console.WriteLine("");
-			Console.WriteLine("Do you want to mark a bomb? \n1: Yes \n2: No\nYou can " + 
-			"un-mark a cell by choosing the same cell twice");
-			if(int.Parse(Console.ReadLine()) == 1)
+			int mark = GetUserInput("\nDo you want to mark a bomb?\nYou can " + 
+			"un-mark a cell by choosing the same cell twice! \n1: Yes \n2: No");
+			
+			if(mark == 1)
 			{
-				board.MarkTile(GetRowInput(), GetColumnInput());
+				board.MarkTile((GetUserInput("\nEnter Row: ", size) * size), GetUserInput("\nEnter Column: ", size));
 				
 				//continue just incase user wants to mark multiple bombs
 				continue;
 			}
 
 			//Get the correct tile to reveal
-			int getCorrectTile = GetRowInput() + GetColumnInput();
+			int getCorrectTile = (GetUserInput("\nEnter Row: ", size) * size) + GetUserInput("\nEnter Column: ", size);
 			
 			//reveal that tile with recursion to reveal every valid pos
 			int reveal = board.RevealCells(board.GetCells()[getCorrectTile]);
@@ -94,37 +94,32 @@ class Program
 			//try parse the answer to set an actual value, if it works, return that value
 			//	if not, write invalid input
 			if(int.TryParse(answer, out value))return value; 
-			else Console.WriteLine("Invalid Input");
+			else Console.WriteLine("Invalid input");
 		}
 		return 0;
 	}
 	
-	//simplifies the row input into method for reusability
-	static int GetRowInput()
+	//gets the users answer using while loops and try parse to make sure its correct
+	//using this version for row and column inputs 
+	static int GetUserInput(string statement, int rcSize)
 	{
-		Console.WriteLine("");
-		Console.WriteLine("Enter Row: ");
-		int inputRow = int.Parse(Console.ReadLine());
-		while(inputRow > board.GetSize()[0])
+		int value = rcSize + 2;
+
+		//while loop to allow the user to make the right input
+		while (value + 1 > rcSize)
 		{
-			Console.WriteLine("Please enter a valid row");
-			inputRow = int.Parse(Console.ReadLine());
+			//write statement
+			Console.WriteLine(statement);
+			
+			//get answer
+			string answer = Console.ReadLine();
+			
+			//try parse the answer to set an actual value, if it works, return that value
+			//	if not, write invalid input
+			if(!int.TryParse(answer, out value)) Console.WriteLine("Invalid input");
+			if(value + 1 > rcSize) Console.WriteLine("Input too large");
 		}
-		return inputRow * board.GetSize()[0];
-	}
-	
-	//simplifies the column input into method for reusability
-	static int GetColumnInput()
-	{
-		Console.WriteLine("");
-		Console.WriteLine("Enter Column: ");
-		int inputColumn = int.Parse(Console.ReadLine());
-		while(inputColumn > board.GetSize()[1])
-		{
-			Console.WriteLine("Please enter a valid column");
-			inputColumn = int.Parse(Console.ReadLine());
-		}
-		return inputColumn;
+		return value;
 	}
 	
 	//allows for the ability to replay without having to spam all of this code in main
@@ -148,7 +143,7 @@ class Program
 		for(int i = 0; i < board.GetSize()[0]; i++)
 		{
 			if(i == 0) Console.Write("     ");
-			Console.Write("--{0}--", i);
+			Console.Write(" -{0}- ", i);
 		}
 		
 		//used to hold the numbers for the rows
@@ -160,8 +155,8 @@ class Program
 			if(i % board.GetSize()[0] == 0)
 			{
 				Console.WriteLine("");
-				if(l > 9)Console.Write("--{0}--", l);
-				else Console.Write("--{0} --", l);
+				if(l > 9)Console.Write("- {0}  -", l);
+				else Console.Write("- {0} -", l);
 				l++;
 			}
 
