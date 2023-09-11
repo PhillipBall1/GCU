@@ -1,0 +1,12 @@
+C:\git\GCU\cst250\week_3\ChessBoardConsoleApp\ChessBoardModel\bin\Debug\net6.0\ChessBoardModel.deps.json
+C:\git\GCU\cst250\week_3\ChessBoardConsoleApp\ChessBoardModel\bin\Debug\net6.0\ChessBoardModel.dll
+C:\git\GCU\cst250\week_3\ChessBoardConsoleApp\ChessBoardModel\bin\Debug\net6.0\ChessBoardModel.pdb
+C:\git\GCU\cst250\week_3\ChessBoardConsoleApp\ChessBoardModel\obj\Debug\net6.0\ChessBoardModel.csproj.AssemblyReference.cache
+C:\git\GCU\cst250\week_3\ChessBoardConsoleApp\ChessBoardModel\obj\Debug\net6.0\ChessBoardModel.GeneratedMSBuildEditorConfig.editorconfig
+C:\git\GCU\cst250\week_3\ChessBoardConsoleApp\ChessBoardModel\obj\Debug\net6.0\ChessBoardModel.AssemblyInfoInputs.cache
+C:\git\GCU\cst250\week_3\ChessBoardConsoleApp\ChessBoardModel\obj\Debug\net6.0\ChessBoardModel.AssemblyInfo.cs
+C:\git\GCU\cst250\week_3\ChessBoardConsoleApp\ChessBoardModel\obj\Debug\net6.0\ChessBoardModel.csproj.CoreCompileInputs.cache
+C:\git\GCU\cst250\week_3\ChessBoardConsoleApp\ChessBoardModel\obj\Debug\net6.0\ChessBoardModel.dll
+C:\git\GCU\cst250\week_3\ChessBoardConsoleApp\ChessBoardModel\obj\Debug\net6.0\refint\ChessBoardModel.dll
+C:\git\GCU\cst250\week_3\ChessBoardConsoleApp\ChessBoardModel\obj\Debug\net6.0\ChessBoardModel.pdb
+C:\git\GCU\cst250\week_3\ChessBoardConsoleApp\ChessBoardModel\obj\Debug\net6.0\ref\ChessBoardModel.dll

@@ -1,9 +1,9 @@
 public class Cell
 {
-	int row;
-	int column;
+	int row = -1;
+	int column = -1;
 	bool visited;
-	bool live;
+	bool live = false;
 	int liveNeighbors;
 	bool marked = false;
 	

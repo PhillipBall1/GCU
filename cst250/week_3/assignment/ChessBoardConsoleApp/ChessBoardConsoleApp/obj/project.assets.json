@@ -1,0 +1,83 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0": {
+      "ChessBoardModel/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ChessBoardModel.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ChessBoardModel.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ChessBoardModel/1.0.0": {
+      "type": "project",
+      "path": "../ChessBoardModel/ChessBoardModel.csproj",
+      "msbuildProject": "../ChessBoardModel/ChessBoardModel.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net6.0": [
+      "ChessBoardModel >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Phillip\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\git\\GCU\\cst250\\week_3\\assignment\\ChessBoardConsoleApp\\ChessBoardConsoleApp\\ChessBoardConsoleApp.csproj",
+      "projectName": "ChessBoardConsoleApp",
+      "projectPath": "C:\\git\\GCU\\cst250\\week_3\\assignment\\ChessBoardConsoleApp\\ChessBoardConsoleApp\\ChessBoardConsoleApp.csproj",
+      "packagesPath": "C:\\Users\\Phillip\\.nuget\\packages\\",
+      "outputPath": "C:\\git\\GCU\\cst250\\week_3\\assignment\\ChessBoardConsoleApp\\ChessBoardConsoleApp\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Phillip\\AppData\\Roaming\\NuGet\\NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "projectReferences": {
+            "C:\\git\\GCU\\cst250\\week_3\\assignment\\ChessBoardConsoleApp\\ChessBoardModel\\ChessBoardModel.csproj": {
+              "projectPath": "C:\\git\\GCU\\cst250\\week_3\\assignment\\ChessBoardConsoleApp\\ChessBoardModel\\ChessBoardModel.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net6.0": {
+        "targetAlias": "net6.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.415\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
