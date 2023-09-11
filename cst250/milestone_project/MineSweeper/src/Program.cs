@@ -119,7 +119,7 @@ class Program
 			//	if not, write invalid input
 			if(!int.TryParse(answer, out value)) Console.WriteLine("Invalid input");
 			if(value + 1 > rcSize) Console.WriteLine("Input too large");
-			if(value - 2 < 0) Console.WriteLine("Input too small");
+			if(value < 0) Console.WriteLine("Input too small");
 		}
 		return value;
 	}
