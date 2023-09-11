@@ -43,17 +43,13 @@ class Program
 		//no win or loss
 		if(wl == 0) return 0;
 		
+		
 		//there was a win or loss, write appropriate line
 		if(wl == 1) Console.WriteLine("\nYou beat the game!");
-		else
-		{
-			Console.WriteLine("\nYou hit a mine :(");
-			//reveal board
-			Console.WriteLine("\nREVEALED BOARD");
-			PrintBoard(board);
-		} 
+		else Console.WriteLine("\nYou hit a mine :(");
 		
-		
+		Console.WriteLine("\nREVEALED BOARD");
+		PrintBoard(board);
 		
 		//asks user to play again, no then quit
 		if(GetUserInput("\n\nPlay Again? \n1: Yes \n2: No") == 2) return -1;
@@ -130,15 +126,24 @@ class Program
 		//displays the boards column numbers
 		for(int i = 0; i < board.GetSize(); i++)
 		{
-			if(i == 0) Console.Write("     ");
-			Console.Write(" -{0}- ", i);
+			if(i == 0) Console.Write("   ");
+			Console.Write(" {0}  ", i);
+			
 		}
+		
+		Console.Write("\n  ");
+		for(int k = 0; k < board.GetSize(); k++)
+		{
+			Console.Write("+---");
+		}
+		Console.Write("+");
 		
 		for(int i = 0; i < board.GetSize(); i++)
 		{
 			Console.WriteLine("");
-			if(i > 9)Console.Write("- {0}  -", i);
-			else Console.Write("- {0} -", i);
+			if(i > 9)Console.Write("{0}", i);
+			else Console.Write("{0} ", i);
+			
 			for(int j = 0; j < board.GetSize(); j++)
 			{
 				Cell currCell = board.GetCell(i, j);
@@ -146,18 +151,25 @@ class Program
 				// if the cell is not visited or marked place '?'
 				if(!currCell.GetVisited() && !currCell.GetMarked())
 				{
-					Console.Write("[ " + "?" + " ]");
-				
+					Console.Write("| " + "? ");
+					
 					//continues so nothing gets overwritten in the later statements (saves another nested if)
 					continue;
 				}
 
 				//if cells live place X, else if cell is not numbered place nothing, else cell is numbered
 				// place the number
-				if (currCell.GetLive() || currCell.GetMarked()) Console.Write("[ " + "X" + " ]");
-				else if (currCell.GetLiveNeighbors() == 0) Console.Write("[ " + " " + " ]");
-				else Console.Write("[ " +  currCell.GetLiveNeighbors().ToString()  + " ]");
+				if (currCell.GetLive() || currCell.GetMarked()) Console.Write("| " + "X ");
+				else if (currCell.GetLiveNeighbors() == 0) Console.Write("| " + "  ");
+				else Console.Write("| " +  currCell.GetLiveNeighbors().ToString() + " ");
+				
 			}
+			Console.Write("|\n  ");
+				for(int k = 0; k < board.GetSize(); k++)
+				{
+					Console.Write("+---");
+				}
+			Console.Write("+");
 		}
 	}
 	
