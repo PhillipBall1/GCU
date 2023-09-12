@@ -1,12 +1,12 @@
 
 //imports express libraries
 import express, { Request, Response } from 'express';
-import dotenv from "dotenv";
 import fruitRouter from './fruit/fruit.routes';
 import userRouter from './users/users.routes';
 import logger from './middleware/logger.middleware';
 import cors from 'cors';
 import helmet from 'helmet';
+import dotenv from "dotenv";
 
 
 dotenv.config();
