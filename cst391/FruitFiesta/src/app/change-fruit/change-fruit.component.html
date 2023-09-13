@@ -1,0 +1,40 @@
+<body  *ngIf="!wasSubmitted">
+  <img src="assets/images/bannerbottom.png">
+  <div class="title-container">
+    <div class="title-card" align="center">
+      Change {{ fruitIn.name }}
+    </div>
+  </div>
+
+  <div class="main-container">
+    <form (ngSubmit)="onSubmit()" #createForm="ngForm">
+      <div class="user-entry">
+        <label for="fruitName">Current Name</label> <input id="fruitName" type="text"
+          class="form-control" aria-describedby="helpName"
+          placeholder="{{ fruitIn.name }}" required
+          [(ngModel)]="fruitOut.Name" name="fruitName">
+      </div>
+      <div class="user-entry">
+        <label for="description">Current Description</label>
+        <textarea id="description" rows="3" class="form-control"
+          aria-describedby="helpDescription"
+          placeholder="{{ fruitIn.description }}" required
+          [(ngModel)]="fruitOut.Description" name="description"></textarea>
+      </div>
+      <div class="user-entry">
+        <label for="price">Current Price</label> <input id="price" type="text"
+          class="form-control" aria-describedby="helpPrice"
+          placeholder="{{ fruitIn.price }}" required
+          [(ngModel)]="fruitOut.Price" name="price">
+      </div>
+      <div class="user-entry">
+        <label for="picture">Current Picture Filename</label> <input id="picture"
+          type="text" class="form-control" aria-describedby="helpPicture"
+          placeholder="{{ fruitIn.picture }}"
+          [(ngModel)]="fruitOut.Picture" name="picture">
+      </div>
+      <button type="submit" class=btn btn-primary>Submit</button>
+    </form>
+  </div>
+
+</body>

@@ -1,0 +1,32 @@
+<body>
+  <img src="assets/images/banner.png"width="1920px" height="100px">
+
+  <nav class="navbar navbar-expand-xxl navbar-dark dark-bg">
+    <a class="navbar-brand brand-name" href="#">Fruit Fiesta</a>
+
+
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav navbar-nav-scroll">
+        <li class="navbar-links">
+          <a class="nav-link" href="https://www.gcu.edu/">GCU Home Page</a>
+        </li>
+        <li class="navbar-links">
+          <a class="nav-link" routerLink="/create">Create</a>
+        </li>
+        <li class="navbar-links">
+          <a class="nav-link" routerLink="/update">Update</a>
+        </li>
+        <li class="navbar-links">
+          <a class="nav-link" routerLink="/delete">Delete</a>
+        </li>
+        <li class="navbar-links">
+          <button class="nav-link" (click)="displayFruitList()">Search</button>
+        </li>
+        <li class="navbar-links">
+          <button class="nav-link" (click)="displayVersion()">About</button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</body>
+<router-outlet></router-outlet>

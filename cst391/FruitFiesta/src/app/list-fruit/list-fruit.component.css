@@ -1,0 +1,48 @@
+
+body{
+  background-color: rgb(255, 184, 184);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+.fruit-image{
+  width: 150px;
+  height: 250px;
+}
+
+.main-container{
+  display:flex;
+}
+
+.search-side-bar{
+  border-style: outset;
+  border-color: rgb(255, 184, 184);
+  border-radius: 3%;
+  margin-left: 15px;
+  width: 300px;
+  height: 600px;
+  background-color: rgb(255, 255, 255);
+}
+
+.fruit-card {
+  border-style: outset;
+  background-color: white;
+  border-color: rgb(255, 184, 184);
+  border-radius: 10%;
+  width: 200px;
+  height: 360px;
+  box-shadow: 15px 20px 10px 0px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.fruit-card:hover {
+  box-shadow: 15px 20px 10px 5px rgba(0,0,0,0.5);
+}
+
+.fruit-cards-container {
+  display: grid;
+  grid-template-columns: 255px 255px 255px 255px 255px 255px;
+  column-gap: 10px;
+  row-gap: 30px;
+}
+

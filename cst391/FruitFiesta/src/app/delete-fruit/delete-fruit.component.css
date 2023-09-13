@@ -1,0 +1,58 @@
+* {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+body{
+  overflow-x: hidden;
+  background-color: #9b5559;
+  min-height: 100vh;
+}
+
+.title-card{
+  margin: 2%;
+  text-align: center;
+  background-color: white;
+  border-style:outset;
+  border-color: #9b5559;
+  font-size: 30px;
+  width: 95%;
+  box-shadow: 15px 20px 10px 0px rgba(0,0,0,0.2);
+  font-weight: 900;
+}
+
+.fruit-image{
+  padding-left: -100px;
+  width: 150px;
+  height: 250px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fruit-card {
+  border-style: outset;
+  background-color: white;
+  border-color: #9b5559;
+  border-radius: 10%;
+  width: 200px;
+  height: 360px;
+  box-shadow: 15px 20px 10px 0px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.fruit-card:hover {
+  box-shadow: 15px 20px 10px 5px rgba(0,0,0,0.5);
+}
+
+.fruit-container {
+  padding: 2px 16px;
+}
+.fruit-cards-container {
+
+  padding: 2%;
+  display: grid;
+  grid-template-columns: 255px 255px 255px 255px 255px 255px 255px;
+  column-gap: 10px;
+  row-gap: 30px;
+}
+

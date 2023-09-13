@@ -1,0 +1,44 @@
+
+
+<body  *ngIf="!wasSubmitted">
+  <img src="assets/images/bannerbottom.png">
+  <div class="title-container">
+    <div class="title-card" align="center">
+      Create a Fruit
+    </div>
+  </div>
+
+  <div class="main-container">
+    <form (ngSubmit)="onSubmit()" #createForm="ngForm">
+      <div class="user-entry">
+        <label for="fruitName">Name</label> <input id="fruitName" type="text"
+          class="form-control" aria-describedby="helpName"
+          placeholder="Enter the name of the Fruit" required
+          [(ngModel)]="fruit.Name" name="fruitName">
+      </div>
+      <div class="user-entry">
+        <label for="description">Description</label>
+        <textarea id="description" rows="3" class="form-control"
+          aria-describedby="helpDescription"
+          placeholder="Enter the description of the Fruit" required
+          [(ngModel)]="fruit.Description" name="description"></textarea>
+      </div>
+      <div class="user-entry">
+        <label for="price">Price</label> <input id="price" type="text"
+          class="form-control" aria-describedby="helpPrice"
+          placeholder="Enter the price of the Fruit" required
+          [(ngModel)]="fruit.Price" name="price">
+      </div>
+      <div class="user-entry">
+        <label for="picture">Picture Filename</label> <input id="picture"
+          type="text" class="form-control" aria-describedby="helpPicture"
+          placeholder="Enter the picture filename for the Fruit"
+          [(ngModel)]="fruit.Picture" name="picture">
+      </div>
+      <button type="submit" class=btn btn-primary>Submit</button>
+    </form>
+  </div>
+  <app-list-fruit *ngIf="wasSubmitted"></app-list-fruit>
+</body>
+
+

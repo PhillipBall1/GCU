@@ -1,0 +1,23 @@
+<body *ngIf="selectedFruit == null">
+  <img src="assets/images/bannerbottom.png">
+  <div class="title-container">
+    <div class="title-card" align="center">
+      Choose a Fruit to Delete
+    </div>
+  </div>
+
+  <div class="fruit-list" >
+    <div class="fruit-cards-container">
+      <button class="fruit-card" *ngFor="let fruit of fruits" (click)="onSelectFruit(fruit)">
+        <img class="fruit-image"src="assets/images/{{ fruit.picture }}" alt="{{ fruit.name }}">
+        <div class="fruit-container" align="center">
+          <h4><b>{{ fruit.name }}</b></h4>
+          <p>{{ fruit.description }}</p>
+        </div>
+      </button>
+    </div>
+  </div>
+
+</body>
+
+

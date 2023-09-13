@@ -19,12 +19,12 @@ export const readFruitByFruitId = async (fruitId: number) => {
 
 export const createFruit = async (fruit: Fruit) => {
     return execute<OkPacket>(fruitQueries.createFruit,
-        [fruit.name, fruit.expiration, fruit.description, fruit.price, fruit.picture]);
+        [fruit.name, fruit.description, fruit.price, fruit.picture]);
 };
 
 export const updateFruit = async (fruit: Fruit) => {
     return execute<OkPacket>(fruitQueries.updateFruit,
-        [fruit.name, fruit.expiration, fruit.description, fruit.price, fruit.picture, fruit.fruitId]);
+        [fruit.name, fruit.description, fruit.price, fruit.picture, fruit.fruitId]);
 };
 
 export const deleteFruit = async (fruitId: number) => {

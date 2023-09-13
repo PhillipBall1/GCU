@@ -1,0 +1,11 @@
+<body  *ngIf="fruit">
+  <img src="assets/images/bannerbottom.png">
+  <div class="container">
+    <img src="assets/images/{{ fruit.picture }}" class="img" alt="{{ fruit.name }}">
+    <div>
+      <h5 class="card-title">{{ fruit.name }}</h5>
+	    <p>{{ fruit.description }}</p>
+	    <small class="">{{ fruit.price }} $</small>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,99 @@
+body {
+  --border-bg-color: #7ca982;
+  --background-color:#243e36;
+  --background-color-light:#c3ffbb;
+  --text-color: #fcfcfc;
+  --text-color-inBar: #3f3f3f;
+}
+
+* {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body{
+  overflow-x: hidden;
+  background: var(--border-bg-color);
+  min-height: 100vh;
+}
+
+.title-card{
+  margin: 2%;
+  text-align: center;
+  background-color: white;
+  border-style:outset;
+  border-width: 4px;
+  border-color: var(--border-bg-color);
+  background-color:  var(--background-color);
+  color: var(--text-color);
+  font-size: 30px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  box-shadow: 15px 20px 10px 0px rgba(0,0,0,0.2);
+  font-weight: bold;
+}
+
+.main-container{
+  box-shadow: 15px 20px 10px 0px rgba(0,0,0,0.2);
+  border-style: outset;
+  border-color:var(--border-bg-color);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 2%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  height: 500px;
+}
+
+.user-entry{
+  padding: 10px;
+
+}
+
+label{
+  padding: 5px;
+  font-size: 16px;
+  font-weight: 400;
+
+}
+
+textarea{
+  border-color: var(--background-color);
+  background-color:  var(--background-color-light);
+  color: var(--text-color-inBar);
+  resize: none;
+  font-weight: 600;
+  border-style:outset;
+  border-width: 3px;
+}
+
+textarea::placeholder{
+  color: var(--text-color-inBar);
+}
+
+input{
+  border-color: var(--background-color);
+  background-color:var(--background-color-light);
+  color: var(--text-color-inBar);
+  font-weight: 600;
+  border-style:outset;
+  border-width: 3px;
+}
+
+input::placeholder{
+  color: var(--text-color-inBar);
+}
+
+button{
+  border-color: var(--background-color);
+  background-color:  var(--background-color-light);
+  color: var(--text-color-inBar);
+  font-weight: 600;
+  border-style:outset;
+  border-width: 3px;
+  float: right;
+  margin: 10px;
+}

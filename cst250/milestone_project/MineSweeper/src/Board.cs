@@ -143,6 +143,4 @@ public class Board
 		if(cells[row, col].GetMarked() == false) cells[row, col].SetMarked(true);
 		else cells[row, col].SetMarked(false);
 	}
-	
-	
 }
