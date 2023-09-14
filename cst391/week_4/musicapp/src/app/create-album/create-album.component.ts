@@ -19,9 +19,8 @@ export class CreateAlbumComponent implements OnInit {
 
 	public onSubmit() {
 		const tracks: Track[] = this.parseTracks(this.tracksRaw);
-		this.album.Tracks = tracks;
-		const status = this.service.createAlbum(this.album);
-		console.log('The return from createAlbum() was ' + status);
+		this.album.tracks = tracks;
+		this.service.createAlbum(this.album, () => console.log("Created Album: " + this.album));
 		this.wasSubmitted = true;
 	}
 

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CreateAlbumComponent } from './create-album/create-album.component';
@@ -23,9 +23,10 @@ import { ListArtistsComponent } from './list-artists/list-artists.component';
 		ListArtistsComponent,
 	],
 	imports: [
-		AppRoutingModule,
 		BrowserModule,
+		HttpClientModule,
 		FormsModule,
+		AppRoutingModule,
 		ReactiveFormsModule
 	],
 	providers: [],

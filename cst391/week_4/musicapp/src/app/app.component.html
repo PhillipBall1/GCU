@@ -1,23 +1,31 @@
-<div class="container">
+<body>
+  <style>
+    .nav-link, .navbar-brand {
+      color: black;
+    }
+  </style>
+  
+  <nav class="navbar navbar-expand-xxl navbar-dark">
+    <a class="navbar-brand brand-name" href="#">{{ title }}</a>
 
-    <h1>Welcome to {{ title }}</h1>
 
-
-    <nav class="navbar navbar-light navbar-expand-md navigation-clean-button">
-
-    <div class="d-flex justify-content-center" id="navbarNav">
-      <div style="margin: 0 auto;">
-      <div class="navbar-nav">
-        <a class="submit-button text-center" href="#">My Music</a>
-        <a class="submit-button text-center" href="https://www.gcu.edu" target="_blank">GCU Home Page</a>
-        <a class="submit-button text-center" routerLink="/create">Create Album</a>
-        <a class="submit-button text-center" (click)="displayArtistList()">Artist List</a>
-        <button class="submit-button text-center" (click)="displayVersion()">About</button>
-      </div>
-    </div>
+    <div>
+      <ul class="navbar-nav navbar-nav-scroll">
+        <li class="navbar-links">
+          <a class="nav-link" href="https://www.gcu.edu/">GCU Home Page</a>
+        </li>
+        <li class="navbar-links">
+          <a class="nav-link" routerLink="/create">Create</a>
+        </li>
+        <li class="navbar-links">
+          <button class="nav-link" (click)="displayArtistList()">List Artists</button>
+        </li>
+        <li class="navbar-links">
+          <button class="nav-link" (click)="displayVersion()">About</button>
+        </li>
+      </ul>
     </div>
   </nav>
+  <router-outlet></router-outlet>
+</body>
 
-    <router-outlet></router-outlet>
-
-</div>

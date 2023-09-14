@@ -1,13 +1,12 @@
-<div class="artist-list" *ngIf="selectedArtist == null">
-  <button
-    class="submit-button"
-    *ngFor="let artist of artists"
-    (click)="onSelectArtist(artist)"
-  >
-    {{ artist.Name }}
-  </button>
+<body *ngIf="selectedArtist == null">
+  <div class="main-container">
+        <button *ngFor="let artist of artists" (click)="onSelectArtist(artist)">
+          <h4><b>{{artist.artist}}</b></h4>
+        </button>
+  </div>
+</body>
+<div *ngIf="selectedArtist">
+  <app-list-albums  [artist]="selectedArtist"></app-list-albums>
 </div>
 
-<div *ngIf="selectedArtist">
-  <app-list-albums [artist]="selectedArtist"></app-list-albums>
-</div>
+

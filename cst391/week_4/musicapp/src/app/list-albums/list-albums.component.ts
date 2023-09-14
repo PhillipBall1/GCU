@@ -14,16 +14,16 @@ import { Artist } from '../models/Artist';
 
 export class ListAlbumsComponent implements OnInit {
 
-	@Input() artist: Artist | null = null;
+	@Input() artist!: Artist;
 	albums: Album[] = [];
 	selectedAlbum: Album | null = null;
 
 	constructor(private service: MusicServiceService) { }
 
 	ngOnInit() {
-		if (this.artist) {
-			this.albums = this.service.getAlbums(this.artist.Name);
-		}
+		this.service.getAlbumsOfArtist(this.artist.artist, (albums: Album[])=>{
+			this.albums = albums;
+		})
 	}
 
 	public onSelectAlbum(album: Album) {

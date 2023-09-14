@@ -1,13 +1,13 @@
 import { Track } from "./Track";
 
 export class Album {
-	private id: number = -1;
-	private title: string = "";
-	private artist: string = "";
-	private description: string = "";
-	private year: number = 1900;
-	private image: string = "";
-	private tracks: Track[] = [];
+	public id: number = -1;
+	public title: string = "";
+	public artist: string = "";
+	public description: string = "";
+	public year: number = 1900;
+	public image: string = "";
+	public tracks: Track[] = [];
 
 	constructor(id: number, title: string, artist: string, description: string, year: number, image: string, tracks: Track[]) {
 		this.id = id;

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Album } from '../models/Album';
+import { Track } from '../models/Track';
 
 @Component({
 	selector: 'app-display-album',
@@ -11,5 +12,8 @@ export class DisplayAlbumComponent implements OnInit {
 
 	constructor() { }
 
-	ngOnInit() { }
+	ngOnInit() 
+	{ 
+		console.log("Tracks: " + this.album!.tracks);
+	}
 }

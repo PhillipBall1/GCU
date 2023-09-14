@@ -10,21 +10,22 @@ import { Artist } from '../models/Artist';
 	styleUrls: ['./list-artists.component.css']
 })
 export class ListArtistsComponent implements OnInit {
-	artists: Artist[] = [];
-	selectedArtist: Artist | null = null;
+    artists: Artist[]=[];
+  	selectedArtist: Artist | null = null;
 
 	constructor(private route: ActivatedRoute, private service: MusicServiceService) { }
 
 	ngOnInit() {
-		this.route.queryParams.subscribe(params => {
-			console.log("Getting data...");
-			this.artists = this.service.getArtists();
-			this.selectedArtist = null;
-		});
+    console.log("Getting data....");
+	this.service.getArtists((artists: Artist[]) => {
+      this.artists = artists;
+      console.log("this.artists",this.artists);
+    });
 	}
 
-	public onSelectArtist(artist: Artist) {
-		console.log("Selected Artist of " + artist.Name);
-		this.selectedArtist = artist;
-	}
+  	onSelectArtist(selectedArtist: Artist){
+    	this.selectedArtist = selectedArtist;
+    	console.log("User selected " + selectedArtist.artist);
+
+  	}
 }
