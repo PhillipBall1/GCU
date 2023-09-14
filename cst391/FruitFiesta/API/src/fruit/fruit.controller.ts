@@ -1,5 +1,5 @@
 import { Request, RequestHandler, Response } from 'express';
-import * as FruitDao from '../fruit/fruit.dao';
+import * as FruitDao from './fruit.dao';
 import { OkPacket } from 'mysql';
 
 export const readFruit: RequestHandler = async (req: Request, res: Response) => {

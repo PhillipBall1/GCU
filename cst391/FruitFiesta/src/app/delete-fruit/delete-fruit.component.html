@@ -8,13 +8,12 @@
   <div class="fruit-list" >
     <div class="fruit-cards-container">
       <button class="fruit-card" *ngFor="let fruit of fruits" (click)="onSelectFruit(fruit)">
+        <div class="overlay">
+          <span class="cross">X</span>
+        </div>
         <img class="fruit-image"src="assets/images/{{ fruit.picture }}" alt="{{ fruit.name }}">
         <div class="fruit-container" align="center">
-          <br>
-          <br>
-          <h2><b>{{ fruit.name }}</b></h2>
-          <br>
-          <br>
+          <b>{{ fruit.name }}</b>
         </div>
       </button>
     </div>

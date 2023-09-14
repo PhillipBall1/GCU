@@ -20,11 +20,8 @@
         <button class="fruit-card" *ngFor="let fruit of fruits" (click)="onSelectFruit(fruit)">
           <img class="fruit-image"src="assets/images/{{ fruit.picture }}" alt="{{ fruit.name }}">
           <div class="fruit-container" align="center">
-            <br>
-            <br>
-            <h2><b>{{ fruit.name }}</b></h2>
-            <br>
-            <br>
+
+            <b>{{ fruit.name }} ${{ fruit.price }}</b>
           </div>
         </button>
       </div>

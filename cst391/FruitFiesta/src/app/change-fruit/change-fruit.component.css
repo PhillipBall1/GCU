@@ -1,9 +1,10 @@
 body {
-  --border-bg-color: #7ca982;
-  --background-color:#243e36;
-  --background-color-light:#c3ffbb;
-  --text-color: #f1fff0;
-  --text-color-inBar: #3f3f3f;
+  --border-bg-color: #DDD0C8;
+  --background-color:#323232;
+  --background-color-dark:#242424;
+  --background-color-light:#DDD0C8;
+  --text-color: #DDD0C8;
+  --text-color-dark: #323232;
 }
 
 * {
@@ -17,6 +18,10 @@ body{
 }
 
 .title-card{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
   text-align: center;
   background-color: white;
   border-style:outset;
@@ -25,10 +30,6 @@ body{
   background-color:  var(--background-color);
   color: var(--text-color);
   font-size: 30px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
   box-shadow: 15px 20px 10px 0px rgba(0,0,0,0.2);
   font-weight: bold;
 }
@@ -62,7 +63,7 @@ label{
 textarea{
   border-color: var(--background-color);
   background-color:  var(--background-color-light);
-  color: var(--text-color-inBar);
+  color: var(--text-color-dark);
   resize: none;
   font-weight: 600;
   border-style:outset;
@@ -70,26 +71,26 @@ textarea{
 }
 
 textarea::placeholder{
-  color: var(--text-color-inBar);
+  color: var(--text-color-dark);
 }
 
 input{
   border-color: var(--background-color);
   background-color:var(--background-color-light);
-  color: var(--text-color-inBar);
+  color: var(--text-color-dark);
   font-weight: 600;
   border-style:outset;
   border-width: 3px;
 }
 
 input::placeholder{
-  color: var(--text-color-inBar);
+  color: var(--text-color-dark);
 }
 
 button{
   border-color: var(--background-color);
   background-color:  var(--background-color-light);
-  color: var(--text-color-inBar);
+  color:var(--text-color-dark);
   font-weight: 600;
   border-style:outset;
   border-width: 3px;

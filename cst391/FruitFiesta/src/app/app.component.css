@@ -1,9 +1,19 @@
+body {
+  --border-bg-color: #DDD0C8;
+  --background-color:#323232;
+  --background-color-dark:#242424;
+  --background-color-light:#DDD0C8;
+  --text-color: #DDD0C8;
+  --text-color-dark: #323232;
+}
+
 * {
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+
 .dark-bg{
-  background-color: black;
+  background-color: var(--background-color);
 }
 
 html, body {
@@ -11,6 +21,7 @@ html, body {
   overflow-x: hidden;
 }
 .brand-name{
+  color: var(--text-color);
   margin-left: 20px;
   font-size: 30px;
   font-weight: bolder;
@@ -18,7 +29,7 @@ html, body {
 
 .navbar-links a{
   margin-top: 5px;
-  color:  rgb(202, 202, 202);
+  color:  var(--text-color);
   max-width: 64rem;
   font-size: 18px;
   font-weight: bold;
@@ -26,7 +37,7 @@ html, body {
 
 .navbar-links button{
   margin-top: 5px;
-  color:  rgb(202, 202, 202);
+  color:  var(--text-color);
   max-width: 64rem;
   font-size: 18px;
   font-weight: bold;
