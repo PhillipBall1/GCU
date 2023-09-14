@@ -10,15 +10,28 @@
 
 Fruit Fiesta is a fruit only shop, where the user can create an account, add fruit to their cart, and checkout. I have never seen a fruit only shop and mainly thought it would be a fun idea. 
 
-## Powerpoint/API Documentation Video
+## Powerpoint/API Documentation Videos
 
-[Screencast](https://www.youtube.com/watch?v=H2ZXxgh3xb4)
+[Milestone 3 Screencast](https://www.youtube.com/watch?v=H2ZXxgh3xb4)
 
-## Changes
+[Milestone 4 Screencast]()
+
+## Design Report
 
 |Date|Change made|
 |:-------:|----------------------------------|
-|8/28/23|changed the id values from the fruit and user database to <br>match their respective names (fruitId)(userId) in sql|
+|8/28/23|changed the id values from the fruit and user database to match their respective names (fruitId)(userId) in sql|
+|9/13/23|removed expiration from the database as I could not find a reasonable use for it inside the website|
+
+## To-Do
+
+|Date|Entry|
+|:-------:|----------------------------------|
+|9/13/23|finish the search function for the fruit|
+|9/13/23|add a home page|
+|9/13/23|add a cart function|
+|9/13/23|when the user selects a fruit from search, the display looks gross, fix that|
+
 
 
 ## Fruit Routes

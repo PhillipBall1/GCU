@@ -2,7 +2,7 @@ body {
   --border-bg-color: #9b5559;
   --background-color:#552f2c;
   --background-color-light:#ffd6bb;
-  --text-color: #fcfcfc;
+  --text-color: #ffd6bb;
   --text-color-inBar: #3f3f3f;
 }
 
@@ -17,11 +17,10 @@ body{
 }
 
 .title-card{
-  margin: 2%;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 100%;
   text-align: center;
   background-color: white;
   border-style:outset;
