@@ -51,6 +51,9 @@
 ## UML Diagram
 ![uml2](docs/uml2.png)
 
+## Flow Chart
+![FlowChart](docs/FlowChart.png)
+
 ## Screenshots
 
 **Initial pop-up Screen**
