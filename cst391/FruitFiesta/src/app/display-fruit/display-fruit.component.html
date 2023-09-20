@@ -1,18 +1,14 @@
 <body  *ngIf="fruit">
-  <img src="assets/images/bannerbottom.png">
-  <div class="main-container">
+  <div class="main-card">
     <div class="image-container">
       <img src="assets/images/{{ fruit.picture }}" class="img" alt="{{ fruit.name }}">
     </div>
     <div class="info-container">
-      <div class="info-name">
-        {{ fruit.name }}
+      <div class="fruit-name">
+        {{ fruit.name }} - {{ fruit.price }}$
       </div>
-      <div class="info-description">
+      <div class="fruit-description">
         {{ fruit.description }}
-      </div>
-      <div class="info-price">
-        {{ fruit.price }} $
       </div>
     </div>
   </div>

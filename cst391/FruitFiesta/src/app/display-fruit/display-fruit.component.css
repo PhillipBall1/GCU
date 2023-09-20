@@ -1,15 +1,65 @@
-img {
-  width: 100%;
+* {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.main-container {
-  display: grid;
-  grid-template-columns: 400px;
-  grid-template-rows:0;
+
+body {
+  --border-bg-color: #DDD0C8;
+  --background-color:#323232;
+  --background-color-dark:#242424;
+  --background-color-light:#DDD0C8;
+  --text-color: #DDD0C8;
+  --text-color-dark: #323232;
 }
+
 body{
-  background-color: rgb(255, 184, 184);
+  background-color:  var(--border-bg-color);
   overflow-x: hidden;
   min-height: 100vh;
   overflow-y: hidden;
 }
+
+img {
+  width: 100%;
+}
+
+.main-card {
+  display: flex;
+  width: 80%;
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.image-container{
+  border-style: outset;
+  border-radius: 20px;
+  border-color: var(--border-bg-color);
+  background-color: var(--background-color);
+}
+
+.info-container{
+  border-style: outset;
+  border-radius: 20px;
+  border-color: var(--border-bg-color);
+  padding: 20px;
+  color: var(--text-color);
+  background-color: var(--background-color-dark);
+}
+
+
+.fruit-name{
+  font-size: 50px;
+  font-weight: bolder;
+}
+
+.fruit-description{
+  padding: 10px;
+  font-size: 20px;
+}
+
+.add-to-cart{
+  padding: 5px;
+  font-size: 20px;
+}
+
