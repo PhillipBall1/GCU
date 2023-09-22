@@ -29,12 +29,13 @@
 ***Activity 3: Write a one-paragraph summary of the new features that have been added. Define new terminology that was used in the lesson.***
 
 >In this activity we took the steps a bit further and introduced an array of album data. From the array, instead of using : 
-
-```
-<Card 
-    albumTitle={album.title} 
-    albumDescription={album.description} 
-    buttonText='OK' 
-    imgURL={album.image} 
-/> 
-```
+>
+>```
+><Card 
+>    albumTitle="an album title"
+>    albumDescription="an album description"
+>    buttonText='OK' 
+>    imgURL="an album image" 
+>/> 
+>```
+>over and over again to display each album, we created a function to render the list and make the instance from data -> rendered card -> card much more reusable, where the only change in code needed to display other items would be to the data itself.
