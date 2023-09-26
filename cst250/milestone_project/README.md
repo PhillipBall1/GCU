@@ -11,6 +11,7 @@
 | 1 | [Here](#milestone-one) | None |
 | 2/3 | [Here](#milestone-twothree) | None |
 | 4 | [Here](#milestone-four) | None |
+| 5 | [Here](#milestone-five) | None |
 
 
 # Milestone One
@@ -83,3 +84,25 @@
 # Milestone Four
 
 [Back to Top](#cover-sheet)
+
+## Screenshots
+
+**Initial select difficulty screen**
+
+![4ss1](docs/gui_select_difficulty.png)
+
+**10 x 10 Button grid displayed after the play game click**
+
+![4ss2](docs/gui_after_play_game.png)
+
+**Button click functionality displayed, increasing per click on button**
+
+![4ss3](docs/gui_after_clicks.png)
+
+**15 x 15 to demonstrate that the grid can be dynamically sized**
+
+![4ss4](docs/gui_15x15_demonstration.png)
+
+## UI Wireframe
+
+![4wireframe](docs/wireframe.png)
