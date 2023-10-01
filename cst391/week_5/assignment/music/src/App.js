@@ -1,48 +1,74 @@
-import React, { useState } from 'react'; 
-import Card from './Card'; 
+import React, { useEffect, useState } from 'react'; 
+import NewAlbum from './NewAlbum'; 
 import './App.css'
+import dataSource from './dataSource';
+import OneAlbum from './OneAlbum';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from 'react-router-dom';
+import NavBar from './NavBar';
+import SearchAlbum from './SearchAlbum';
 
-const App = () => 
+const App = (props) => 
 { 
-    const [albumList, setAlbumList] = useState([ 
-        { artistId: 0, 
-          artist: 'The Beatles', 
-          title: 'Yellow Submarine', 
-          description: 'Yellow Submarine is the tenth studio album by English rock band the Beatles, released on 13 January 1969 in the United States and on 17 January 1969 in the United Kingdom.', 
-          year: 1969, 
-          image: 'https://upload.wikimedia.org/wikipedia/en/thumb/a/ac/TheBeatles-YellowSubmarinealbumcover.jpg/220px-TheBeatles-YellowSubmarinealbumcover.jpg',
-        }, 
+    const [searchPhrase, setSearchPhrase] = useState('');
+    const [albumList, setAlbumList] = useState([]); 
+    const [currentlySelectedAlbumId, setCurrentlySelectedAlbumId] = useState(0);
+    let refresh = false;
 
-        { artistId: 1, 
-          artist: 'The Beatles', 
-          title: 'Abbey Road', 
-          description: 'Yellow Submarine is the tenth studio album by English rock band the Beatles, released on 13 January 1969 in the United States and on 17 January 1969 in the United Kingdom.', 
-          year: 1969, 
-          image: 'https://upload.wikimedia.org/wikipedia/en/thumb/4/42/Beatles_-_Abbey_Road.jpg/220px-Beatles_-_Abbey_Road.jpg', }, 
-        
-        { artistId: 2, 
-          artist: 'The Beatles', 
-          title: 'Let It Be', 
-          description: "Let It Be is the twelfth and final studio album by the English rock band the Beatles. It was released on 8 May 1970, almost a month after the group's break-up.", 
-          year: 1970, 
-          image: 'https://upload.wikimedia.org/wikipedia/en/thumb/2/25/LetItBe.jpg/220px-LetItBe.jpg', 
-        }, 
-    ]); 
-    const renderedList = () => 
-    { 
-        return albumList.map((album) => 
-        { 
-            return ( 
-            <Card 
-                albumTitle={album.title} 
-                albumDescription={album.description} 
-                buttonText='OK' 
-                imgURL={album.image} 
-            /> 
-            ); 
-        }); 
-    }; 
-    return <div className='container'>{renderedList()}</div>;
+    const updateSearchResults = (phrase) => {
+      console.log('phrase is ' + phrase);
+      setSearchPhrase(phrase);
+    }
+
+
+    useEffect(() => {
+      loadAlbums();
+    }, [refresh]);
+
+    const loadAlbums = async () => {
+      const response = await dataSource.get('http://localhost:5000/albums');
+
+      setAlbumList(response.data);
+    };
+    console.log('albumList',albumList)
+    const renderedList = albumList.filter((album) => {
+      if(album.description.toLowerCase().includes(searchPhrase.toLowerCase()) || searchPhrase === '') return true;
+      else return false;
+    });
+
+
+    const updateSingleAlbum = (id, navigate) => {
+      console.log('Update Single Album', id);
+      console.log('Update Single Album', navigate);
+      var indexNumber =0;
+
+      for(var i = 0; i < albumList.length; i++){
+        if(albumList[i].id === id) indexNumber = i;
+      }
+      setCurrentlySelectedAlbumId(indexNumber);
+      console.log('update path', '/show/' + indexNumber);
+      navigate('/show/' + indexNumber);
+    }
+
+    console.log('renderedList', renderedList);
+
+    return (
+      <BrowserRouter>
+        <NavBar/>
+        <Routes>
+          <Route exact path='/' element ={<SearchAlbum 
+          updateSearchResults={updateSearchResults} 
+          albumList={renderedList} 
+          updateSingleAlbum={updateSingleAlbum}/>}
+          />
+          <Route exact path='/new' element ={<NewAlbum/>}/>
+          <Route exact path='/show/:albumId' element ={<OneAlbum album ={albumList[currentlySelectedAlbumId]}/>}/>
+        </Routes>
+      </BrowserRouter>
+    )
 };
 
 export default App;

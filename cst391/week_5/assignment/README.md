@@ -6,6 +6,13 @@
 
 ---
 
+[Week 5](#week-5)
+[Week 6](#week-6)
+
+# Week 5
+
+[Back to Top](#cover-sheet)
+
 ## Screenshots
 
 **Displaying the card that was generated from the Card + App class parameters**
@@ -39,3 +46,76 @@
 >/> 
 >```
 >over and over again to display each album, we created a function to render the list and make the instance from data -> rendered card -> card much more reusable, where the only change in code needed to display other items would be to the data itself.
+
+
+# Week 6
+
+[Back to Top](#cover-sheet)
+
+## Screenshots
+
+### Activity 1
+
+**Initial start up of the website with all of the albums inside of the database from week 1 being displayed**
+
+![4](docs/4.png)
+
+**After the search params were made, displaying the 'please please' input to show the album 'Please Please Me'**
+
+![5](docs/5.png)
+
+### Activity 2
+
+**Initial startup of the application, showing that the user needs to login**
+
+![6](docs/6.png)
+
+**Login portion of the application, after the click the user is considered logged in and can continue to see the web pages**
+
+![7](docs/7.png)
+
+**About page after logged in**
+
+![8](docs/8.png)
+
+**Contact Us page after logged in**
+
+![9](docs/9.png)
+
+**User page after logged in**
+
+![10](docs/10.png)
+
+### Activity 3
+
+**Initial page on open**
+
+![11](docs/11.png)
+
+**Page with 'please' placed into the search to demonstrate that the album 'Please Please Me' shows up**
+
+![12](docs/12.png)
+
+**Page after the navbar 'New' reference was pressed**
+
+![13](docs/13.png)
+
+**Back to main and also demonstrating multiple albums showing up with an input of 'with'**
+
+![14](docs/14.png)
+
+
+
+## Research
+
+***Activity 1: Write a one-paragraph summary of the new features that have been added. Define new terminology that was used in the lesson.***
+
+>This activity was based on dynamic ways to get and display data to the user, we went from using a hard coded method, with the albums programmed into the code, to a new method of creating a JSON file and retrieving that data from the JSON file to the display, and lastly, we used the data from the week 1 MusicAPI and displayed it using axios, which generated the data source.  
+
+***Activity 2: Write a paragraph explaining the new terminology and new features that you just demonstrated.***
+
+>This activity was based on creating webpages using javascript and representing them with a route. We used this route to connect to a navbar and set the routes through Navbar.js. After we were able to fill the contents in the page by setting their returns to be HTML. Using the App.js, we were able to display these created routes through PrivateRouter.js.
+
+***Activity 3: Write a one-paragraph summary of the new features that have been added. Define new terminology that was used in the lesson.***
+
+>This activity brought the whole learning session of this assignment together by taking what we learned from activity 1, which was different methods of getting information into the website leading to our MusicAPI database, and activity 2, where we learned how to use different routing methods of the information, including dynamic features to reduce any hard programmed methods. These features allow for greater flexibility in dynamic website design with object like information.
