@@ -11,7 +11,7 @@
 | 1 | [Here](#milestone-one) | None |
 | 2/3 | [Here](#milestone-twothree) | None |
 | 4 | [Here](#milestone-four) | None |
-| 5 | [Here](#milestone-five) | None |
+| 5 | [Here](#milestone-five) | [Here](https://www.youtube.com/watch?v=YiPxlsjcNbw) |
 
 
 # Milestone One
@@ -106,3 +106,25 @@
 ## UI Wireframe
 
 ![4wireframe](docs/wireframe.png)
+
+# Milestone Five
+
+[Back to Top](#cover-sheet)
+
+## Screenshots
+
+**Initial Screen**
+
+![m5_1](docs/m5_1.png)
+
+**10 x 10 Board Start**
+
+![m5_2](docs/m5_2.png)
+
+**10 x 10 Board Completion**
+
+![m5_3](docs/m5_3.png)
+
+**10 x 10 Board Fail**
+
+![m5_4](docs/m5_4.png)

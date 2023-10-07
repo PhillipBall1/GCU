@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "M3PKjzzCF6XSmKSnqjJy6ceTam2NYt3ujELRbZH1RsU5KlMwvadkorbUWmOQX4q2g17ZGX1exXaeD7OFltYttQ==",
+  "dgSpecHash": "1s7tT9o/ZwUGO86Uci1lswJhLgfXOXJwtMai4Nx/KZCqWL3t1ZHN38Kpr1q2EESKIxaEPRNHP9lF0aJ/DXCDfQ==",
   "success": true,
-  "projectFilePath": "C:\\git\\GCU\\cst250\\milestone_project\\MineSweeper\\MineSweeper.csproj",
+  "projectFilePath": "C:\\git\\GCU\\cst250\\milestone_project\\MineSweeper_Console_App\\MineSweeperConsole.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

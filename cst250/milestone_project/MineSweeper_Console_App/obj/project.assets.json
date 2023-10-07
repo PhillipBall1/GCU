@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\git\\GCU\\cst250\\milestone_project\\MineSweeper\\MineSweeper.csproj",
-      "projectName": "MineSweeper",
-      "projectPath": "C:\\git\\GCU\\cst250\\milestone_project\\MineSweeper\\MineSweeper.csproj",
+      "projectUniqueName": "C:\\git\\GCU\\cst250\\milestone_project\\MineSweeper_Console_App\\MineSweeperConsole.csproj",
+      "projectName": "MineSweeperConsole",
+      "projectPath": "C:\\git\\GCU\\cst250\\milestone_project\\MineSweeper_Console_App\\MineSweeperConsole.csproj",
       "packagesPath": "C:\\Users\\Phillip\\.nuget\\packages\\",
-      "outputPath": "C:\\git\\GCU\\cst250\\milestone_project\\MineSweeper\\obj\\",
+      "outputPath": "C:\\git\\GCU\\cst250\\milestone_project\\MineSweeper_Console_App\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Phillip\\AppData\\Roaming\\NuGet\\NuGet.Config"
