@@ -2,19 +2,24 @@ import React from 'react';
 
 const Card = (props) => {
 
-    return (
+    const handleButtonClick = (event, uri) => {
+        console.log('Information: ', props.albumId);
+        props.onClick(props.albumId, uri);
+    };
 
-        <div className="card" style={{width: '12rem'}}>
-            <img src={props.imgURL} className="card-img-top" alt="ImageName"/>
+    return (
+        <div className="card" style={{width: '18rem'}}>
+            <img src={props.imgURL} className="card-img-top" alt={props.imgURL} />
             <div className="card-body">
                 <h5 className="card-title">{ props.albumTitle }</h5>
                 <p className="card-text"> { props.albumDescription }</p>
-                <a href="index.html" className="btn btn-primary">{ props.buttonText }</a>
+                <button onClick={() => handleButtonClick(props.albumId, '/show/')} className='btn btn-primary'>
+                    {props.buttonText}
+                </button>
+                <button onClick={() => handleButtonClick(props.albumId, '/edit/')} className='btn btn-primary'>Edit</button>
             </div>
         </div>
-
     );
-
-}
+};
 
 export default Card;

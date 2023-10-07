@@ -1,4 +1,4 @@
-# Cover Sheet
+# React Assignments
 
 ### Class: CST-391
 ### Professor: Bobby Estey
@@ -9,6 +9,8 @@
 [Week 5](#week-5)
 
 [Week 6](#week-6)
+
+[Week 7](#week-7)
 
 # Week 5
 
@@ -120,3 +122,69 @@
 ***Activity 3: Write a one-paragraph summary of the new features that have been added. Define new terminology that was used in the lesson.***
 
 >This activity brought the whole learning session of this assignment together by taking what we learned from activity 1, which was different methods of getting information into the website leading to our MusicAPI database, and activity 2, where we learned how to use different routing methods of the information, including dynamic features to reduce any hard programmed methods. These features allow for greater flexibility in dynamic website design with object like information.
+
+# Week 7
+
+[Back to Top](#cover-sheet)
+
+## Screenshots
+
+### Activity 1
+
+**Start display of the site with the blog posts and add text area**
+
+![15](docs/15.png)
+
+**Display after a blogs delete button has been pressed**
+
+![16](docs/16.png)
+
+**Display after adding a new blog (at 12 because I kept adding and deleting blog posts)**
+
+![17](docs/17.png)
+
+### Activity 2
+
+**Create album display**
+
+![18](docs/18.png)
+
+**Create album display filled out**
+
+![19](docs/19.png)
+
+**After submit pressed on create album**
+
+![20](docs/20.png)
+
+**New album displayed**
+
+![21](docs/21.png)
+
+### Activity 3
+
+**View button pressed on album**
+
+![22](docs/22.png)
+
+**Edit button pressed on album**
+
+![23](docs/23.png)
+
+**After edit was submitted**
+
+![24](docs/24.png)
+
+## Research
+
+***Activity 1: Write a one-paragraph summary of the new features that have been added. Define new terminology that was used in the lesson.***
+
+>In activity 1 we used button handlers to control the adding and removing of a blog post object, using an add button to create a blog post using the text area input from the user, and a delete button to remove that blog post using onDelete and filtering out the post.
+
+***Activity 2: Write a one-paragraph summary of the new features that have been added. Define new terminology that was used in the lesson.***
+
+> In activity 2 we created a create album function that achieves the same thing as the last activity where the user inputs get applied to data, but this time it was applied to our MusicAPI backend data and stored there. 
+
+***Activity 3: Write a one-paragraph summary of the new features that have been added. Define new terminology that was used in the lesson.***
+
+> In activity 3 we added a view and edit button onto the cards, the view button onClick would take in an albumId and return the album that was selected and display it using '/show/', and the edit button opens up the '/edit/' route to display the inputs to change the selected album.
