@@ -30,6 +30,8 @@ Fruit Fiesta is a fruit only shop, where the user can create an account, add fru
 
 [Milestone 4 Screencast](https://www.youtube.com/watch?v=fiotvay9-ZY)
 
+[Milestone 5 Screencast](https://www.youtube.com/watch?v=xQLLr8rL-7I)
+
 ## Design Report
 
 |Date|Change made|
@@ -45,6 +47,7 @@ Fruit Fiesta is a fruit only shop, where the user can create an account, add fru
 |9/13/23|add a home page|
 |9/13/23|add a cart function|
 |9/13/23|when the user selects a fruit from search, the display looks gross, fix that|
+|10/7/23|React Front end looks pretty bland, update the interfaces|
 
 
 <br>

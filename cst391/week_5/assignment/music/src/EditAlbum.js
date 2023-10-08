@@ -4,7 +4,7 @@ import dataSource from './dataSource';
 
 
 
-const NewAlbum = (props) => {
+const EditAlbum = (props) => {
 
     let album = {
         title: '',
@@ -111,4 +111,4 @@ const NewAlbum = (props) => {
     );
 };
 
-export default NewAlbum;
+export default EditAlbum;
