@@ -1,0 +1,15 @@
+C:\git\GCU\cst250\week_6\TextFileDataAccessDemo\TextFileDataAccessDemo\bin\Debug\net6.0\TextFileDataAccessDemo.exe
+C:\git\GCU\cst250\week_6\TextFileDataAccessDemo\TextFileDataAccessDemo\bin\Debug\net6.0\TextFileDataAccessDemo.deps.json
+C:\git\GCU\cst250\week_6\TextFileDataAccessDemo\TextFileDataAccessDemo\bin\Debug\net6.0\TextFileDataAccessDemo.runtimeconfig.json
+C:\git\GCU\cst250\week_6\TextFileDataAccessDemo\TextFileDataAccessDemo\bin\Debug\net6.0\TextFileDataAccessDemo.dll
+C:\git\GCU\cst250\week_6\TextFileDataAccessDemo\TextFileDataAccessDemo\bin\Debug\net6.0\TextFileDataAccessDemo.pdb
+C:\git\GCU\cst250\week_6\TextFileDataAccessDemo\TextFileDataAccessDemo\obj\Debug\net6.0\TextFileDataAccessDemo.csproj.AssemblyReference.cache
+C:\git\GCU\cst250\week_6\TextFileDataAccessDemo\TextFileDataAccessDemo\obj\Debug\net6.0\TextFileDataAccessDemo.GeneratedMSBuildEditorConfig.editorconfig
+C:\git\GCU\cst250\week_6\TextFileDataAccessDemo\TextFileDataAccessDemo\obj\Debug\net6.0\TextFileDataAccessDemo.AssemblyInfoInputs.cache
+C:\git\GCU\cst250\week_6\TextFileDataAccessDemo\TextFileDataAccessDemo\obj\Debug\net6.0\TextFileDataAccessDemo.AssemblyInfo.cs
+C:\git\GCU\cst250\week_6\TextFileDataAccessDemo\TextFileDataAccessDemo\obj\Debug\net6.0\TextFileDataAccessDemo.csproj.CoreCompileInputs.cache
+C:\git\GCU\cst250\week_6\TextFileDataAccessDemo\TextFileDataAccessDemo\obj\Debug\net6.0\TextFileDataAccessDemo.dll
+C:\git\GCU\cst250\week_6\TextFileDataAccessDemo\TextFileDataAccessDemo\obj\Debug\net6.0\refint\TextFileDataAccessDemo.dll
+C:\git\GCU\cst250\week_6\TextFileDataAccessDemo\TextFileDataAccessDemo\obj\Debug\net6.0\TextFileDataAccessDemo.pdb
+C:\git\GCU\cst250\week_6\TextFileDataAccessDemo\TextFileDataAccessDemo\obj\Debug\net6.0\TextFileDataAccessDemo.genruntimeconfig.cache
+C:\git\GCU\cst250\week_6\TextFileDataAccessDemo\TextFileDataAccessDemo\obj\Debug\net6.0\ref\TextFileDataAccessDemo.dll
