@@ -79,5 +79,14 @@ namespace Minesweeper.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string scores {
+            get {
+                return ResourceManager.GetString("scores", resourceCulture);
+            }
+        }
     }
 }

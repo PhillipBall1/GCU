@@ -12,6 +12,7 @@
 | 2/3 | [Here](#milestone-twothree) | None |
 | 4 | [Here](#milestone-four) | None |
 | 5 | [Here](#milestone-five) | [Here](https://www.youtube.com/watch?v=YiPxlsjcNbw) |
+| 6 | [Here](#milestone-six) | None |
 
 
 # Milestone One
@@ -128,3 +129,37 @@
 **10 x 10 Board Fail**
 
 ![m5_4](docs/m5_4.png)
+
+# Milestone Six
+
+[Back to Top](#cover-sheet)
+
+## Screenshots
+
+**Initial Screen**
+
+![m6_1](docs/m6_1.png)
+
+**10 x 10 Board Completion**
+
+![m6_2](docs/m6_2.png)
+
+**Leaderboard so far, after running the game a few times**
+
+![m6_3](docs/m6_3.png)
+
+**Selecting 5x5 to demonstrate the difference on completion**
+
+![m6_4](docs/m6_4.png)
+
+**Leader board after a few 5x5 completions, with the score being sorted descending, with information on the difficulty, map size, and date completed**
+
+![m6_5](docs/m6_5.png)
+
+## Other
+
+**This is how I generate the score given to the player, subtracting 100 by difficulty is needed because the difficulty is easier the higher it is**
+
+```
+return Math.Round((100 - difficulty) * size / seconds * 100, 2);
+```

@@ -1,8 +1,10 @@
 using System.Diagnostics;
 using System.Drawing;
 using System.Reflection;
+using System.Text.Json;
 using System.Text.Json.Serialization;
-using static System.Net.Mime.MediaTypeNames;
+using System.Windows.Forms;
+using static System.Formats.Asn1.AsnWriter;
 
 namespace Minesweeper
 {
@@ -11,6 +13,9 @@ namespace Minesweeper
         private Board board;
         private int size = 10;
         private Stopwatch watch = new Stopwatch();
+        private int difficulty = 0;
+        string path = @"" + Application.StartupPath + "\\Resources\\scores.txt";
+        List<Score> scores = new List<Score>();
         public Form1()
         {
             InitializeComponent();
@@ -28,7 +33,7 @@ namespace Minesweeper
         private void PopulatePanel()
         {
             panel2.Controls.Clear();
-            int difficulty = 0;
+            
             if (radioButton1.Checked) difficulty = 90;
             if (radioButton2.Checked) difficulty = 75;
             if (radioButton3.Checked) difficulty = 60;
@@ -124,7 +129,7 @@ namespace Minesweeper
             currButton.Text = neighbors.ToString();
         }
 
-        private System.Drawing.Image FormatImage(System.Drawing.Image prop)
+        private Image FormatImage(Image prop)
         {
             Size bSize = new Size(panel2.Width / size, panel2.Height / size);
             Bitmap b = new Bitmap(prop, new Size((Point)bSize));
@@ -147,7 +152,74 @@ namespace Minesweeper
             
             panel3.Visible = false;
             panel1.Visible = true;
+
+            if(condition == 1) scores.Add(new Score(GenerateScore(watch.Elapsed.TotalSeconds, difficulty, size), GetDifficulty(), size, DateTime.Now.ToString()));
+
+            SaveScores();
+
             watch.Reset();
+        }
+
+        private string GetDifficulty()
+        {
+            switch(difficulty)
+            {
+                case 90: return "Easy";
+                case 75: return "Medium";
+                case 60: return "Hard";
+            }
+            return "";
+        }
+
+        //Load scores, sort scores, the display in the listbox when leaderboards button is pressed.
+        private void button2_Click(object sender, EventArgs e)
+        {
+            LoadScores();
+            List<Score> sortedScores = scores.OrderByDescending(score => score.GetScore()).ToList();
+            listBox1.Items.Clear();
+            for (int i = 0; i < sortedScores.Count; i++)
+            {
+                listBox1.Items.Add((i + 1) + ": " + sortedScores[i].ToString());
+            }
+            panel4.Visible = true;
+        }
+
+        //makes the score more exciting instead of just a time
+        private double GenerateScore(double seconds, int difficulty, int size)
+        {
+            return Math.Round((100 - difficulty) * size / seconds * 100, 2);
+        }
+
+        #region Save and Load scores
+
+        //saves scores to file by taking the override ToString component from Score and coinverting List<Score> to a List<string>
+        private void SaveScores()
+        {
+            List<string> stringList = new List<string>();
+            foreach (Score score in scores)
+            {
+                stringList.Add(score.ToString());
+            }
+            File.WriteAllLines(path, stringList);
+        }
+
+        //loads scores from a file by just splitting the line using '|' getting the double score value and the string date value
+        private void LoadScores()
+        {
+            List<string> file = File.ReadAllLines(path).ToList();
+            if (file.Count <= 0) return;
+            scores.Clear();
+            foreach (string line in file)
+            {
+                string[] split = line.Split('|');
+                scores.Add(new Score(double.Parse(split[0]), split[1], int.Parse(split[2]), split[3]));
+            }
+        }
+        #endregion
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            panel4.Visible = false;
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
@@ -160,6 +232,7 @@ namespace Minesweeper
         {
             label4.Text = "Elapsed Time: " + watch.Elapsed.Minutes.ToString() + " : " + watch.Elapsed.Seconds.ToString();
         }
+
     }
 
 }

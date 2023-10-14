@@ -9,17 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Update="docs\Flag.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Update="Properties\Flag.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="docs\" />
-    <Folder Include="Resources\" />
   </ItemGroup>
 
   <ItemGroup>

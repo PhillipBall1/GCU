@@ -32,5 +32,4 @@ C:\git\GCU\cst250\milestone_project\Minesweeper_Windows_Forms_App\Minesweeper\ob
 C:\git\GCU\cst250\milestone_project\Minesweeper_Windows_Forms_App\Minesweeper\obj\Debug\net6.0-windows\Minesweeper.pdb
 C:\git\GCU\cst250\milestone_project\Minesweeper_Windows_Forms_App\Minesweeper\obj\Debug\net6.0-windows\Minesweeper.genruntimeconfig.cache
 C:\git\GCU\cst250\milestone_project\Minesweeper_Windows_Forms_App\Minesweeper\obj\Debug\net6.0-windows\ref\Minesweeper.dll
-C:\git\GCU\cst250\milestone_project\Minesweeper_Windows_Forms_App\Minesweeper\bin\Debug\net6.0-windows\docs\Flag.jpg
 C:\git\GCU\cst250\milestone_project\Minesweeper_Windows_Forms_App\Minesweeper\obj\Debug\net6.0-windows\Minesweeper.Properties.Resources.resources
