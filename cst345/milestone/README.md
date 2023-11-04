@@ -40,6 +40,7 @@
 >Inserted Albertsons at store id 21 
 
 ![m1_3](docs/m1_3.png)
+
 ![m1_4](docs/m1_4.png)
 
 ```Show an example of deleting a product category record based on a category ID```
