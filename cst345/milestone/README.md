@@ -5,10 +5,11 @@
 ### Author: Phillip Ball
 
 ---
-| Milestone | Link | 
-| --- | ---| 
-| 1 | [Here](#milestone-1) |
-| 2 | [Here](#milestone-2) |
+| Link | 
+| --- |
+| [Milestone 1](#milestone-1) |
+| [Milestone 2](#milestone-2) |
+| [Milestone 3](#milestone-3) |
 
 
 # Milestone 1
@@ -115,4 +116,32 @@
 
 | Links |
 | --- |
+| [Screenshots](#screenshots-2) |
 |[Back to Top](#milestone-project) |
+
+## Screenshots 2
+
+[Back to Milestone 2](#milestone-2)
+
+```A screenshot of the MySQL Workbench diagram showing the relationships between all the tables.```
+
+![m2_1](docs/m2_1.png)
+
+```Screenshots of SQL queries and four results for the INSERT order```
+
+![m2_2](docs/m2_2.png)
+![m2_3](docs/m2_3.png)
+
+```Screenshots of SQL queries and three INSERT order item queries. ```
+
+> I created a bunch of orders and just made them random for certain inputs so I could just spam create them. This joining the orders later look better due to an increased number of order_items
+
+![m2_4](docs/m2_4.png)
+![m2_5](docs/m2_5.png)
+
+```Screenshots of the SQL SELECT query and results that show all items associated with a single order.```
+
+>Only chose to show two orders because these ones got filled the most from the random entries. Also used a round statement to clean up the decimals on the Total column. 
+
+![m2_6](docs/m2_6.png)
+![m2_7](docs/m2_7.png)
