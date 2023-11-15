@@ -1,0 +1,17 @@
+C:\git\GCU\Foundation\Foundation\bin\Debug\net6.0-windows\Foundation.exe
+C:\git\GCU\Foundation\Foundation\bin\Debug\net6.0-windows\Foundation.deps.json
+C:\git\GCU\Foundation\Foundation\bin\Debug\net6.0-windows\Foundation.runtimeconfig.json
+C:\git\GCU\Foundation\Foundation\bin\Debug\net6.0-windows\Foundation.dll
+C:\git\GCU\Foundation\Foundation\bin\Debug\net6.0-windows\Foundation.pdb
+C:\git\GCU\Foundation\Foundation\obj\Debug\net6.0-windows\Foundation.csproj.AssemblyReference.cache
+C:\git\GCU\Foundation\Foundation\obj\Debug\net6.0-windows\Foundation.Form1.resources
+C:\git\GCU\Foundation\Foundation\obj\Debug\net6.0-windows\Foundation.csproj.GenerateResource.cache
+C:\git\GCU\Foundation\Foundation\obj\Debug\net6.0-windows\Foundation.GeneratedMSBuildEditorConfig.editorconfig
+C:\git\GCU\Foundation\Foundation\obj\Debug\net6.0-windows\Foundation.AssemblyInfoInputs.cache
+C:\git\GCU\Foundation\Foundation\obj\Debug\net6.0-windows\Foundation.AssemblyInfo.cs
+C:\git\GCU\Foundation\Foundation\obj\Debug\net6.0-windows\Foundation.csproj.CoreCompileInputs.cache
+C:\git\GCU\Foundation\Foundation\obj\Debug\net6.0-windows\Foundation.dll
+C:\git\GCU\Foundation\Foundation\obj\Debug\net6.0-windows\refint\Foundation.dll
+C:\git\GCU\Foundation\Foundation\obj\Debug\net6.0-windows\Foundation.pdb
+C:\git\GCU\Foundation\Foundation\obj\Debug\net6.0-windows\Foundation.genruntimeconfig.cache
+C:\git\GCU\Foundation\Foundation\obj\Debug\net6.0-windows\ref\Foundation.dll
