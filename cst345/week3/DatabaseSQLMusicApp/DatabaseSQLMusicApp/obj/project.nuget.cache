@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "AV2/Ip26l6+6mTowEyNFdjvS3mO5JX75M96f8LJ4F3k0XlgVkzmKhw/Y/8TnJBOxvakuNNt7V3ty0ETZxUSUXg==",
+  "dgSpecHash": "s5yRAyKUTPr+y1OE+kx0WPwJ/AxuDsHVUsEEwFZaLPSqvo8s8PQZWAtrlZ5/erV+24ueoDZ33BxTtOLhDZPj3g==",
   "success": true,
   "projectFilePath": "C:\\git\\GCU\\cst345\\week3\\DatabaseSQLMusicApp\\DatabaseSQLMusicApp\\DatabaseSQLMusicApp.csproj",
   "expectedPackageFiles": [
@@ -11,8 +11,10 @@
     "C:\\Users\\Phillip\\.nuget\\packages\\k4os.hash.xxhash\\1.0.8\\k4os.hash.xxhash.1.0.8.nupkg.sha512",
     "C:\\Users\\Phillip\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Phillip\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "C:\\Users\\Phillip\\.nuget\\packages\\microsoft.web.webview2\\1.0.2151.40\\microsoft.web.webview2.1.0.2151.40.nupkg.sha512",
     "C:\\Users\\Phillip\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\Phillip\\.nuget\\packages\\mysql.data\\8.2.0\\mysql.data.8.2.0.nupkg.sha512",
+    "C:\\Users\\Phillip\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\Phillip\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\Phillip\\.nuget\\packages\\system.configuration.configurationmanager\\4.4.1\\system.configuration.configurationmanager.4.4.1.nupkg.sha512",
     "C:\\Users\\Phillip\\.nuget\\packages\\system.diagnostics.diagnosticsource\\7.0.2\\system.diagnostics.diagnosticsource.7.0.2.nupkg.sha512",

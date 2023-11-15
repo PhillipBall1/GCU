@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,6 +36,9 @@ namespace DatabaseSQLMusicApp
                         ImageURL = reader.GetString(4),
                         Description = reader.GetString(5),
                     };
+
+                    a.Tracks = GetTracksForAlbum(a.ID);
+
                     albums.Add(a);
                 }
             }
@@ -42,6 +46,74 @@ namespace DatabaseSQLMusicApp
             connection.Close();
 
             return albums;
+        }
+
+        public List<Track> GetTracksForAlbum(int albumID)
+        {
+            List<Track> tracks = new List<Track>();
+
+            MySqlConnection connection = new MySqlConnection(connectionString);
+
+            connection.Open();
+
+            MySqlCommand command = new MySqlCommand();
+            command.CommandText = "SELECT * FROM TRACKS WHERE album_id = @albumid";
+            command.Parameters.AddWithValue("@albumid", albumID);
+            command.Connection = connection;
+
+            using (MySqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    Track a = new Track
+                    {
+                        ID = reader.GetInt32(1),
+                        Name = reader.GetString(2),
+                        Number = reader.GetInt32(3),
+                        VideoURL = reader.GetString(4),
+                        Lyrics = reader.GetString(5)
+                    };
+
+                    tracks.Add(a);
+                }
+            }
+
+            connection.Close();
+
+            return tracks;
+        }
+
+        public List<JObject> GetTracksForAlbumUsingJoin(int albumID)
+        {
+            List<JObject> tracks = new List<JObject>();
+
+            MySqlConnection connection = new MySqlConnection(connectionString);
+
+            connection.Open();
+
+            MySqlCommand command = new MySqlCommand();
+            command.CommandText = "SELECT tracks.tracks_id, albums.album_title, tracks.title, tracks.number, tracks.video_url, tracks.lyrics, albums.id FROM TRACKS  JOIN albums ON tracks.album_id = albums.id WHERE album_id = @albumid";
+            command.Parameters.AddWithValue("@albumid", albumID);
+            command.Connection = connection;
+
+            using (MySqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    JObject newTrack = new JObject();
+                    
+                    for(int i = 0; i < reader.FieldCount; i++)
+                    {
+                        newTrack.Add(reader.GetName(i).ToString(), reader.GetValue(i).ToString());
+                    }
+
+                    tracks.Add(newTrack);
+                }
+            }
+
+            connection.Close();
+
+            return tracks;
         }
 
         public List<Album> SearchTitles(string search)
@@ -100,6 +172,22 @@ namespace DatabaseSQLMusicApp
             connection.Close();
 
             return newRows;
+        }
+
+        internal int DeleteTrack(int trackID)
+        {
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            connection.Open();
+
+            MySqlCommand command = new MySqlCommand();
+            command.CommandText = "DELETE FROM TRACKS WHERE TRACKS.tracks_id = @trackID";
+            command.Parameters.AddWithValue("@trackID", trackID);
+            command.Connection = connection;
+
+            int result = command.ExecuteNonQuery();
+            connection.Close();
+
+            return result;
         }
     }
 }

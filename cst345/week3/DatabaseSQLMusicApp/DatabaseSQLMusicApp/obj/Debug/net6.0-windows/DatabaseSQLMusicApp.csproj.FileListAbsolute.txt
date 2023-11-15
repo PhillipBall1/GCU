@@ -33,3 +33,10 @@ C:\git\GCU\cst345\week3\DatabaseSQLMusicApp\DatabaseSQLMusicApp\bin\Debug\net6.0
 C:\git\GCU\cst345\week3\DatabaseSQLMusicApp\DatabaseSQLMusicApp\bin\Debug\net6.0-windows\runtimes\win-x64\native\krbcc64.dll
 C:\git\GCU\cst345\week3\DatabaseSQLMusicApp\DatabaseSQLMusicApp\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
 C:\git\GCU\cst345\week3\DatabaseSQLMusicApp\DatabaseSQLMusicApp\obj\Debug\net6.0-windows\DatabaseSQLMusicApp.csproj.CopyComplete
+C:\git\GCU\cst345\week3\DatabaseSQLMusicApp\DatabaseSQLMusicApp\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\git\GCU\cst345\week3\DatabaseSQLMusicApp\DatabaseSQLMusicApp\bin\Debug\net6.0-windows\runtimes\win-x86\native\WebView2Loader.dll
+C:\git\GCU\cst345\week3\DatabaseSQLMusicApp\DatabaseSQLMusicApp\bin\Debug\net6.0-windows\runtimes\win-x64\native\WebView2Loader.dll
+C:\git\GCU\cst345\week3\DatabaseSQLMusicApp\DatabaseSQLMusicApp\bin\Debug\net6.0-windows\runtimes\win-arm64\native\WebView2Loader.dll
+C:\git\GCU\cst345\week3\DatabaseSQLMusicApp\DatabaseSQLMusicApp\bin\Debug\net6.0-windows\Microsoft.Web.WebView2.Core.dll
+C:\git\GCU\cst345\week3\DatabaseSQLMusicApp\DatabaseSQLMusicApp\bin\Debug\net6.0-windows\Microsoft.Web.WebView2.WinForms.dll
+C:\git\GCU\cst345\week3\DatabaseSQLMusicApp\DatabaseSQLMusicApp\bin\Debug\net6.0-windows\Microsoft.Web.WebView2.Wpf.dll

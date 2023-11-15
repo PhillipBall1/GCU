@@ -4,6 +4,9 @@ namespace DatabaseSQLMusicApp
     {
 
         BindingSource albumsBindingSource = new BindingSource();
+        BindingSource tracksBindingSource = new BindingSource();
+
+        List<Album> albums = new List<Album>();
 
         public Form1()
         {
@@ -15,6 +18,8 @@ namespace DatabaseSQLMusicApp
             AlbumsDAO albumsDAO = new AlbumsDAO();
 
             albumsBindingSource.DataSource = albumsDAO.GetAllAlbums();
+
+            albums = albumsDAO.GetAllAlbums();
 
             dataGridView1.DataSource = albumsBindingSource;
         }
@@ -37,6 +42,9 @@ namespace DatabaseSQLMusicApp
             string ImageURL = dataGridView.Rows[rowClicked].Cells[4].Value.ToString();
 
             pictureBox1.Load(ImageURL);
+
+            tracksBindingSource.DataSource = albums[rowClicked].Tracks;
+            dataGridView2.DataSource = tracksBindingSource;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -53,6 +61,32 @@ namespace DatabaseSQLMusicApp
             AlbumsDAO albumsDAO = new AlbumsDAO();
             int result = albumsDAO.AddOneALbum(album);
             MessageBox.Show(result + " new row(s) inserted");
+        }
+
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView dataGridView = (DataGridView)sender;
+
+            int rowClicked = dataGridView.CurrentRow.Index;
+
+            string videoURL = dataGridView.Rows[rowClicked].Cells[3].Value.ToString();
+
+            webView21.Source = new Uri(videoURL);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            int rowClicked = dataGridView2.CurrentRow.Index;
+            int trackID = (int)dataGridView2.Rows[rowClicked].Cells[0].Value;
+
+            AlbumsDAO albumsDAO = new AlbumsDAO();
+
+            int result = albumsDAO.DeleteTrack(trackID);
+
+            dataGridView2.DataSource = null;
+            albums = albumsDAO.GetAllAlbums();
+            MessageBox.Show("Result " + result);
+
         }
     }
 }
