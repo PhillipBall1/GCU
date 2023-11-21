@@ -172,3 +172,48 @@
 
 ![m3_8](docs/m3_8.png)
 
+# Milestone 4
+
+| Links |
+| --- |
+|[Back to Top](#milestone-project) |
+
+## Screenshots 4
+
+**Initial Application on start-up**
+
+![m4_1](docs/m4_1.png)
+
+**After add category has been pressed**
+
+![m4_2](docs/m4_2.png)
+
+**Displaying that the new category does show up**
+
+![m4_3](docs/m4_3.png)
+
+**After delete selected category has been pressed**
+
+![m4_4](docs/m4_4.png)
+
+**Displaying that the search function does work using 'Frozen'**
+
+![m4_5](docs/m4_5.png)
+
+**Displaying that after Category 2 has been clicked in the datagridview, the products datagridview displays all of the products in that category**
+
+![m4_9](docs/m4_9.png)
+
+**After adding a new product**
+
+![m4_6](docs/m4_6.png)
+
+**Showing that the new product has been added**
+
+![m4_7](docs/m4_7.png)
+
+**After delete selected product has been pressed on the created product**
+
+![m4_8](docs/m4_8.png)
+
+

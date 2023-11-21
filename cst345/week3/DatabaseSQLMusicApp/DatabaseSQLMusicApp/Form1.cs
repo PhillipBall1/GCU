@@ -72,6 +72,7 @@ namespace DatabaseSQLMusicApp
             string videoURL = dataGridView.Rows[rowClicked].Cells[3].Value.ToString();
 
             webView21.Source = new Uri(videoURL);
+
         }
 
         private void button4_Click(object sender, EventArgs e)

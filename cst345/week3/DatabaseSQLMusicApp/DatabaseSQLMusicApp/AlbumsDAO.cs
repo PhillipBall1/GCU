@@ -92,7 +92,8 @@ namespace DatabaseSQLMusicApp
             connection.Open();
 
             MySqlCommand command = new MySqlCommand();
-            command.CommandText = "SELECT tracks.tracks_id, albums.album_title, tracks.title, tracks.number, tracks.video_url, tracks.lyrics, albums.id FROM TRACKS  JOIN albums ON tracks.album_id = albums.id WHERE album_id = @albumid";
+            command.CommandText = "SELECT tracks.tracks_id, albums.album_title, tracks.title, tracks.number, tracks.video_url, tracks.lyrics, albums.id FROM TRACKS  " +
+                "JOIN albums ON tracks.album_id = albums.id WHERE album_id = @albumid";
             command.Parameters.AddWithValue("@albumid", albumID);
             command.Connection = connection;
 
