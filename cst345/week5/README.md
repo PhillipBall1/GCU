@@ -6,14 +6,8 @@
 
 ---
 
-| Link | 
-| --- |
-| [Screenshots](#screenshots) |
-| [Research](#research) |
 
 ## Screenshots
-
-[Back to Top](#activity-5)
 
 **On Startup**
 
@@ -76,3 +70,5 @@
 **Run the following SQL statement to verify that your information was added successfully**
 
 ![20](docs/20.png)
+
+[Back to Top](#activity-5)
