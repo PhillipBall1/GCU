@@ -49,7 +49,9 @@
 > **The ID above is reference for the ID that I used to delete as it was the changed tabby cat**
 >
 >![8](docs/8.png)
+>
 > **Proof that the changed tabby cat was deleted**
+>
 >![8.1](docs/8.1.png)
 
 **Showing the successful findbyid using the ID above as reference**
