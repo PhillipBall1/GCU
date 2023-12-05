@@ -1,7 +1,4 @@
 ﻿package cst345;
-
-import java.util.ArrayList;
-
 public class App
 {
     public static PetStoreDAO dao = new PetStoreDAO();
