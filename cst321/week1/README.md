@@ -90,3 +90,95 @@
 
 ## Activity 1
 [Back to Top](#week-one)
+
+`Take a screenshot of the Ubuntu Desktop running in your virtual machine`
+
+>I am using Kali linux with Ubuntu 64x. I was trying to use the Ubuntu ISO but it kept crashing my VM for some reason so I just figured I could do all of the same things within Kali.
+
+![Alt](docs/activity1/1.png)
+
+`Create a new C program that supports the following capabilities`
+
+`1. Variable declarations (you need to research variables, declarations, and data types).`
+
+`2. Getting input from a user (you need to research the scanf() function).`
+
+`3. Operators (you need to research the operators available in C).`
+
+`4. Printing formatted output (you need to research the scanf() function)`
+
+![Alt](docs/activity1/2.png)
+
+`Linux: List Command` `Change Directory` `Make or Remove (Empty) Directory`
+
+![Alt](docs/activity1/3.png)
+
+`Linux: Copy or Move or Remove Files` `Find Files`
+`Find Text in Files` `Process`
+
+![Alt](docs/activity1/4.png)
+
+`Windows: Directory Command` `Change Directory` `Make or Remove (Empty) Directory`
+
+![Alt](docs/activity1/5.png)
+
+`Windows: Copy or Move or Remove Files` `Find Files` 
+`Find Text in Files` `Process`
+
+![Alt](docs/activity1/6.png)
+
+`Create a bash script that does the following`
+
+`1. Create a text file 'compile.sh' in the text editor`
+
+`2. Indicate the Shell/Script type in line 1: #!/bin/sh`
+
+`3. Enter the required commands to compile and run your Hello World C program`
+
+`4. Give the script permission using: chmod 777 test.sh command and run the script`
+
+![Alt](docs/activity1/7.png)
+
+`Remove the hard code file names and use a bash script argument`
+
+`1. Save the program to compile script that is passed as a script argument in a variable`
+
+`2. Substitute the variable where you currently have the 'HelloWorld' program name text`
+
+![Alt](docs/activity1/8.png)
+
+`Add error checking`
+
+`1. Check that the script arguments are not empty`
+
+`2. Check the return value from 'gcc'`
+
+![Alt](docs/activity1/9.png)
+
+`Working with environment variables`
+
+`1. Create a 'var1.sh' script`
+
+`2. Create a variable in var1.sh script`
+
+`3. Call the printenv command to print the environment variables out`
+
+`4. Call var2.sh from this script`
+
+`5. Create a 'var2.sh' script`
+
+`6. Call the printenv command to print the environment variables out`
+
+`7. Run 'var1.sh' script`
+
+![Alt](docs/activity1/10.png)
+
+`8. Modify 'var1.sh' script and prefix the variable with the word export`
+
+`9. Run 'var1.sh' script again`
+
+`10. What differences do you see in the environment for each script?`
+
+>The 'var=Hello from var1.sh' is exported into the environment variables after including 'export' as a keyword in var1.sh
+
+![Alt](docs/activity1/11.png)
