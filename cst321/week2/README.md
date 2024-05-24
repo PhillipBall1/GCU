@@ -250,18 +250,19 @@ int main() {
 
 [Back to Top](#week-two)
 
-[1](#question-1) | [2](#question-2) | [3](#question-3) | [4](#question-4) | [5](#question-5) | [6](#question-6) | [7](#question-7)
+[Q1](#question-1) | [Q2](#question-2) | [Q3](#question-3) 
+| [Q4](#question-4)
 
-### Question 1
-[Back](#activity-2)
+[Q5](#question-5) | [Q6](#question-6) | [Q7](#question-7)
 
-[Code](#1)
+## Question 1
+[Back](#activity-2) | [Code](#1)
 
-`From the main() function using the fork() function to create a parent and child process`
+**From the main() function using the fork() function to create a parent and child process**
 
-`The child process should print 10 messages to the console and sleep for 1 second between message then exit the process with a return code of 0`
+**The child process should print 10 messages to the console and sleep for 1 second between message then exit the process with a return code of 0**
 
-`The parent process should print 10 messages to the console and sleep for 2 seconds between message then exit the process with a return code of 0`
+**The parent process should print 10 messages to the console and sleep for 2 seconds between message then exit the process with a return code of 0**
 
 ![Alt](docs/1.png)
 
@@ -269,19 +270,17 @@ int main() {
 
 >The fork() system call is used to create a new process, known as the child process, which is an identical copy of the calling process, known as the parent process. After the fork() call, both the parent and child processes continue execution from the point of the fork() call, but they have separate memory spaces.
 
-### Question 2
+## Question 2
 
-[Back](#activity-2)
+[Back](#activity-2) | [Code](#2)
 
-[Code](#2)
+**From the main() function, accept a command line argument that will be used to spawn off the passed in application**
 
-`From the main() function, accept a command line argument that will be used to spawn off the passed in application`
+**Use the POSIX posix_spawn() function to spawn off the application**
 
-`Use the POSIX posix_spawn() function to spawn off the application`
+**Print the process ID to the console**
 
-`Print the process ID to the console`
-
-`Wait for the process to end by calling the waitpid() function`
+**Wait for the process to end by calling the waitpid() function**
 
 ![Alt](docs/2.png)
 
@@ -289,17 +288,15 @@ int main() {
 
 >posix_spawn() is a function used to create a new process with specified attributes, such as executable path and environment variables. It returns the process ID (PID) of the new child process. waitpid() is then used in the parent process to wait for the child process to terminate, suspending the parent process until the child exits. After the child process exits, the parent process can continue its execution. These functions provide a way to create and manage processes in a more controlled manner than using fork().
 
-### Question 3
+## Question 3
 
-[Back](#activity-2)
+[Back](#activity-2) | [Code](#3)
 
-[Code](#3)
+**From the main() function, use the fork() function to create a parent producer and child consumer process**
 
-`From the main() function, use the fork() function to create a parent producer and child consumer process`
+**The child consumer process should create a signal called WAKEUP, sleep until that signal is received, then once received run a loop for 20 iterations printing a message to the console and sleeping for 1 second for each iteration, then exit the process with a return code of 1**
 
-`The child consumer process should create a signal called WAKEUP, sleep until that signal is received, then once received run a loop for 20 iterations printing a message to the console and sleeping for 1 second for each iteration, then exit the process with a return code of 1`
-
-`The parent producer process should run a loop for 30 iterations printing a message to the console and sleeping for 1 second for each iteration and once a count of 5 has been reached send the WAKEUP signal, then exit the process with a return code of 1`
+**The parent producer process should run a loop for 30 iterations printing a message to the console and sleeping for 1 second for each iteration and once a count of 5 has been reached send the WAKEUP signal, then exit the process with a return code of 1**
 
 ![Alt](docs/3.png)
 
@@ -307,19 +304,17 @@ int main() {
 
 >The code uses fork() to create a child process, which allows for parallel execution of the parent and child processes. It then sets up signal handling using signal() to define how each process should respond to specific signals, such as SIGINT or SIGTERM. By checking between the parent and child processes after fork(), the code can create different signal handlers for each process, enabling them to handle signals independently. This approach ensures that each process can respond appropriately to signals.
 
-### Question 4
+## Question 4
 
-[Back](#activity-2)
+[Back](#activity-2) | [Code](#4)
 
-[Code](#4)
+**From the main() function, use the pthread_create() function to create thread 1 and thread 2**
 
-`From the main() function, use the pthread_create() function to create thread 1 and thread 2`
+**The thread 1 function should print 10 messages to the console and sleep for 1 second between message then exit the thread with a return code of null**
 
-`The thread 1 function should print 10 messages to the console and sleep for 1 second between message then exit the thread with a return code of null.`
+**The thread 2 function should print 10 messages to the console and sleep for 2 seconds between message then exit the thread with a return code of null**
 
-`The thread 2 function should print 10 messages to the console and sleep for 2 seconds between message then exit the thread with a return code of null.`
-
-`The main() function should use the pthread_join() function to wait for each thread to exit before exiting the main program.`
+**The main() function should use the pthread_join() function to wait for each thread to exit before exiting the main program**
 
 ![Alt](docs/4.png)
 
@@ -327,19 +322,17 @@ int main() {
 
 >The code utilizes POSIX threads (pthreads) to create threads in a multi-threaded program. Pthreads provide a way to achieve parallelism by creating multiple threads of execution within a single process. The code would use functions like pthread_create() to create new threads, pthread_join() to wait for threads to finish execution, and possibly pthread_mutex_lock() and pthread_mutex_unlock() to synchronize access to shared resources between threads. Each thread would execute its designated function concurrently with other threads, allowing for parallel processing and improved performance.
 
-### Question 5
+## Question 5
 
-[Back](#activity-2)
+[Back](#activity-2) | [Code](#5)
 
-[Code](#5)
+**Write a bad bank program that simulates bank deposit transactions**
 
-`Write a bad bank program that simulates bank deposit transactions.`
+**From the main() function, use the pthread_create() function to create 2 threads**
 
-`From the main() function, use the pthread_create() function to create 2 threads.`
+**Each thread will call the same function, which simulates a bank deposit transaction, then should sit in a loop for each least 1,000,000 transactions and adding 1 (simulating $1 deposit) to a global variable representing a bank balance that starts out with a value of 0. The thread should return null after all deposits have been made**
 
-`Each thread will call the same function, which simulates a bank deposit transaction, then should sit in a loop for each least 1,000,000 transactions and adding 1 (simulating $1 deposit) to a global variable representing a bank balance that starts out with a value of 0. The thread should return null after all deposits have been made.`
-
-`Run the program. The expected bank balance should be $2,000,000 2 threads each depositing $1,000,000.`
+**Run the program. The expected bank balance should be $2,000,000 2 threads each depositing $1,000,000**
 
 ![Alt](docs/5.png)
 
@@ -347,15 +340,13 @@ int main() {
 
 >The program did not behave as expected because it suffered from a race condition due to concurrent access to the bank_balance variable by multiple threads without proper synchronization. In the original code, the deposit function in each thread would increment bank_balance without any coordination.
 
-### Question 6
+## Question 6
 
-[Back](#activity-2)
+[Back](#activity-2) | [Code](#6)
 
-[Code](#6)
+**Fix the bad bank program by using POSIX mutexes**
 
-`Fix the bad bank program by using POSIX mutexes.`
-
-`Run the program. The expected bank balance should be $2,000,000 (2 threads each depositing $1,000,000). Take a screenshot of the Terminal and Console window output. Write a theory of operation explaining why the program now behaves properly with the mutexes.`
+**Run the program. The expected bank balance should be $2,000,000 (2 threads each depositing $1,000,000). Take a screenshot of the Terminal and Console window output. Write a theory of operation explaining why the program now behaves properly with the mutexes**
 
 ![Alt](docs/6.png)
 
@@ -364,15 +355,13 @@ int main() {
 >Using mutexes ensures that only one thread can access the bank_balance variable at a time. This prevents race conditions where multiple threads might try to update the balance simultaneously, leading to incorrect results. The pthread_mutex_lock() function is used to acquire the mutex before updating the balance, and pthread_mutex_unlock() is used to release the mutex after the update. This way, each thread waits its turn to update the balance, ensuring that the final balance is correct
 
 
-### Question 7
+## Question 7
 
-[Back](#activity-2)
+[Back](#activity-2) | [Code](#7)
 
-[Code](#7)
+**Fix the bad bank program by using POSIX semaphores**
 
-`Fix the bad bank program by using POSIX semaphores.`
-
-`Run the program. The expected bank balance should be $2,000,000 (2 threads each depositing $1,000,000). Take a screenshot of the Terminal and Console window output. Write a theory of operation explaining why the program now behaves properly with the semaphores.`
+**Run the program. The expected bank balance should be $2,000,000 (2 threads each depositing $1,000,000). Take a screenshot of the Terminal and Console window output. Write a theory of operation explaining why the program now behaves properly with the semaphores**
 
 ![Alt](docs/7.png)
 
