@@ -10,6 +10,10 @@
 
 [Memory Management](#memory-management)
 
+[Separation Policy](#separation-policy)
+
+[Program](#program)
+
 
 # Activity 4
 
