@@ -10,11 +10,16 @@
 
 # Activity 6
 
-| [1](#1) |-| [2](#2) |-| [3](#3) |-| [4](#4) |
+1. [Simple File System Navigation](#simple-file-system-navigation) 
+2. [Simple File Manipulation](#simple-file-manipulation)
+3. [Simple Text File Viewing](#simple-text-file-viewing)
+4. [Misc. Commands](#misc-commands)
+5. [Permissions](#permissions)
+6. [Redirection](#redirection)
+7. [Head and Tail Files](#head-and-tail-files)
+8. [Working with the Disk Utilities](#working-with-the-disk-utilities)
 
-| [5](#5) |-| [6](#6) |-| [7](#7) |-| [8](#8) |
-
-## 1
+## Simple File System Navigation
 
 [Back to Assignment](#activity-6)
 
@@ -56,13 +61,14 @@ pwd
 
 This Bash script showcases fundamental file system operations in a Linux setting. It starts by displaying the current directory with the pwd command. Next, it switches to the user's home directory using cd ~, confirming the change by printing the new directory path. The script then moves into a specified subdirectory within the home directory (replace child_directory_name with the actual directory name) and lists all .c files in this directory using ls *.c. Finally, it navigates back to the home directory and prints the directory path again to verify the navigation. Each step is echoed to the screen for clarity.
 
-## 2
+## Simple File Manipulation
 
 [Back to Assignment](#activity-6)
 
-**Screenshot**
+**Screenshots**
 
 ![](docs/2.png)
+
 ![](docs/2_1.png)
 
 **Code**
@@ -105,7 +111,7 @@ This script begins by navigating to the home directory using cd ~. It then creat
 After this, the script moves up one directory level with cd .., creates another directory called MyCode2 (mkdir MyCode2), and copies all files from MyCode to MyCode2 using cp MyCode/ * MyCode2/.
 The script then renames MyCode to deadcode with mv MyCode deadcode and finally removes the deadcode directory and its contents using rm -rf deadcode.
 
-## 3
+## Simple Text File Viewing
 
 [Back to Assignment](#activity-6)
 
@@ -163,7 +169,7 @@ The script then renames MyCode to deadcode with mv MyCode deadcode and finally r
 
 When dealing with directories full of .c files, commands like ls, less, more, and file can boost file management and navigation. The ls command lists directory contents, with options like -a to include hidden files and -l for detailed file information. The less command allows for paginated viewing of file contents, where options such as -N add line numbers, and -p searches for patterns. Similarly, more provides simple paginated viewing, useful for quick, straightforward browsing. The file command identifies the type of each file, offering insights into their format and content, which is particularly handy when working with various file types within a directory. These commands collectively improve efficiency and clarity when handling multiple code files
 
-## 4
+## Misc. Commands
 
 [Back to Assignment](#activity-6)
 
@@ -219,7 +225,7 @@ The script ./test4.sh starts with #!/bin/bash for Bash execution. The IFS (Inter
 
 The which gcc command searches the directories listed in the PATH environment variable for an executable named gcc and returns its path. This confirms whether gcc is installed and where it resides. The man gcc command accesses the system's manual pages, specifically for gcc, offering comprehensive documentation on the command's usage, options, and examples. This aids users in understanding and effectively using the GNU Compiler Collection.
 
-## 5
+## Permissions
 
 [Back to Assignment](#activity-6)
 
@@ -245,7 +251,7 @@ The script ./test5.sh contains #!/bin/bash to indicate it should be executed wit
 
 The chmod 777 ./test5.sh command adds execute permissions to the script, allowing it to be run directly. The ls -l command confirms this change by displaying the new permissions string (-rwxr-xr-x), where x indicates execute permissions. Now, running ./test5.sh will execute the script, printing "Hello World" to the terminal.
 
-## 6
+## Redirection
 
 [Back to Assignment](#activity-6)
 
@@ -272,7 +278,7 @@ The command "ls -l > myfiles.txt" lists the files in the current directory and r
 
 The sort < names.txt command reads the contents of names.txt, sorts the names alphabetically, and outputs the sorted list to the terminal. Piping the ls -l output into less with ls -l | less provides a convenient way to scroll through the detailed file listing one screen at a time. Similarly, cat myfiles.txt | less allows for paginated viewing of the myfiles.txt contents, useful for large files. These commands and their combinations enhance the efficiency of file management and content inspection in a Unix-like environment.
 
-## 7
+## Head and Tail Files
 
 [Back to Assignment](#activity-6)
 
