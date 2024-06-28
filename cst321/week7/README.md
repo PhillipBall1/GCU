@@ -518,4 +518,122 @@ esac
 
 **[Back to Top](#week-7)**
 
+1. [Login Function](#login-function)<br>
+2. [Getting Help](#getting-help-on-a-system-function)<br>
+3. [Listing All](#listing-all-processes)
 
+# Login Function
+
+**[Back to Assignment](#user-interface-and-security)**
+
+### Interface Design
+
+**Single-factor Authentication**
+1. Scheme: Username & Password
+2. Factors: 1 (Password)
+3. Security Considerations: Enforce strong password policies, lockout after failed attempts, encryption
+
+**Two-factor Authentication**
+1. Scheme: Username, Password, and OTP sent via SMS/Email
+2. Factors: 2 (Password + OTP)
+3. Security Considerations: OTP generation and validation, ensure secure transmission and storage of OTP.
+
+### Functional Requirements Table
+
+| Functional Requirement | Security Policy |
+| --- | --- |
+| Username must be alphanumeric, 8-10 characters long | Enforce username complexity rules |
+| Password must be alphanumeric, 1 uppercase, 10-15 characters long | Enforce password complexity rules |
+| Encrypt username and password at rest | Use industry-standard encryption methods |
+| Password hidden during entry and transmission | Mask input fields and use secure transmission protocols (HTTPS) |
+| Lock user out after three unsuccessful attempts | Implement account lockout mechanism |
+| Rotate passwords every 90 days | Implement password expiration policy |
+| Prevent reuse of last 10 passwords | Store password history and enforce reuse policy |
+| Do not disclose which authentication factor failed | Provide generic error messages for failed login attempts |
+
+### Wireframe
+
+![](docs/L1.png)
+
+![](docs/L2.png)
+
+### Flowchart of Logic
+
+![](docs/3.png)
+ 
+## Getting Help on a System Function
+
+**[Back to Assignment](#user-interface-and-security)**
+
+### Interface Design
+
+**Single-factor Authentication**
+1. Scheme: Click to access help
+2. Factors: 0
+3. Security Considerations: Basic access to non-sensitive help topics.
+
+**Two-factor Authentication**
+1. Scheme: Click to access help + Security Question
+2. Factors: 1 (Security Question)
+3. Security Considerations: Validate user's identity for accessing sensitive help topics.
+
+### Functional Requirements Table
+
+| Functional Requirement | Security Policy |
+| --- | --- |
+| Click to access help function | No authentication for general help |
+| Security question for sensitive help topics | Validate answers to pre-defined security questions |
+| Session timeout for help access | Implement session management policies |
+| Encrypt sensitive help content | Use industry-standard encryption for sensitive data |
+| Log access to sensitive help topics | Maintain audit logs for access to sensitive help content |
+
+### Wireframe
+
+![](docs/G1.png)
+
+![](docs/G2.png)
+
+### Flowchart of Logic
+
+![](docs/4.png)
+
+## Listing All Processes
+
+**[Back to Assignment](#user-interface-and-security)**
+
+### Interface Design
+
+**Single-factor Authentication**
+1. Scheme: Admin username and password
+2. Factors: 1 (Password)
+3. Security Considerations: Enforce strong password policies, restrict access to admin users.
+
+**Two-factor Authentication**
+1. Scheme: Admin username, password, and biometric verification
+2. Factors: 2 (Password + Biometric)
+3. Security Considerations: Ensure secure storage and validation of biometric data.
+
+### Functional Requirements Table
+
+| Functional Requirement | Security Policy |
+| --- | --- |
+| Admin username must be alphanumeric, 8-10 characters long | Enforce username complexity rules |
+| Admin password must be alphanumeric, 1 uppercase, 10-15 characters long | Enforce password complexity rules |
+| Encrypt username and password at rest | Use industry-standard encryption methods |
+| Password hidden during entry and transmission | Mask input fields and use secure transmission protocols (HTTPS) |
+| Biometric verification for 2FA | Implement secure storage and validation of biometric data |
+| Log access to process listing | Maintain audit logs for access to process information |
+| Lock user out after three unsuccessful attempts | Implement account lockout mechanism |
+| Rotate passwords every 90 days | Implement password expiration policy |
+| Prevent reuse of last 10 passwords | Store password history and enforce reuse policy |
+| Do not disclose which authentication factor failed | Provide generic error messages for failed login attempts |
+
+### Wireframe
+
+![](docs/P1.png)
+
+![](docs/P2.png)
+
+### Flowchart of Logic
+
+![](docs/5.png)
