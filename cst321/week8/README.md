@@ -1,4 +1,4 @@
-# Cover Sheet
+# Week 8
 
 ### Class: CST-321
 ### Professor: Dr. White
