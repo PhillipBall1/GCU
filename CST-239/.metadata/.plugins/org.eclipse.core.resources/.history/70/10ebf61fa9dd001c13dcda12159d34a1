@@ -1,0 +1,24 @@
+package test;
+
+import org.junit.Test;
+
+public class CalculatorTest
+{
+	@Test
+	public int TestAdd(int a, int b) 
+	{
+		return a + b;
+	}
+	public int TestSubtract(int a, int b) 
+	{
+		return a - b;
+	}
+	public int TestMultiply(int a, int b) 
+	{
+		return a * b;
+	}
+	public int TestDivide(int a, int b) 
+	{
+		return a / b;
+	}
+}

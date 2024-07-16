@@ -12,11 +12,11 @@
 
 ![](docs/1.png)
 
-**Screenshot of the Whitelabel Error Page.**
+**Screenshot of the White label Error Page.**
 
 ![](docs/2.png)
 
-**Screenshot of the Whitelabel Error Page.**
+**Screenshot of the White label Error Page.**
 
 ![](docs/3.png)
 
@@ -30,6 +30,6 @@
 
 ![](docs/5.png)
 
-**Open a browser and go to localhost:8080. The content of the index.html page should be displayed. Take a screensho**
+**Open a browser and go to localhost:8080. The content of the index.html page should be displayed. Take a screenshot**
 
 ![](docs/6.png)

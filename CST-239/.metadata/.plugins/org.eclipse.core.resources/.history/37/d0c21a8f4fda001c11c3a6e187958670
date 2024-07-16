@@ -1,0 +1,14 @@
+package app;
+
+public class CounterWorker
+{
+
+	public static void main(String[] args)
+	{
+		System.out.println("Initial value of Counter: " + Counter.GetCount());
+		
+		int numberCounter = 1000;
+		
+	}
+
+}

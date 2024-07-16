@@ -1,0 +1,30 @@
+package test;
+
+import org.junit.Test;
+
+import app.Calculator;
+
+public class CalculatorTest
+{
+	@Test
+	public int TestAdd(int a, int b) 
+	{
+		Calculator calculator = new Calculator();
+		return a + b;
+	}
+	@Test
+	public int TestSubtract(int a, int b) 
+	{
+		return a - b;
+	}
+	@Test
+	public int TestMultiply(int a, int b) 
+	{
+		return a * b;
+	}
+	@Test
+	public int TestDivide(int a, int b) 
+	{
+		return a / b;
+	}
+}

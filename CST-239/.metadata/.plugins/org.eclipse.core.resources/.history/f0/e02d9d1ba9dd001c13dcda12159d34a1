@@ -1,0 +1,22 @@
+package test;
+
+
+public class CalculatorTest
+{
+	public int TestAdd(int a, int b) 
+	{
+		return a + b;
+	}
+	public int TestSubtract(int a, int b) 
+	{
+		return a - b;
+	}
+	public int TestMultiply(int a, int b) 
+	{
+		return a * b;
+	}
+	public int TestDivide(int a, int b) 
+	{
+		return a / b;
+	}
+}

@@ -1,0 +1,19 @@
+package test;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+
+import app.Calculator;
+
+public class CalculatorTest
+{
+	@Test
+	public void TestAdd() 
+	{
+		Calculator calculator = new Calculator();
+		assertEquals(3, calculator.Add(2, 1));
+		assertEquals(7, calculator.Add(5, 2));
+	}
+	
+}

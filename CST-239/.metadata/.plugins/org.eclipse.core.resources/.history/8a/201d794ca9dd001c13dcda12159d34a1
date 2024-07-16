@@ -1,0 +1,30 @@
+package test;
+
+import org.junit.Test;
+
+import app.Calculator;
+
+public class CalculatorTest
+{
+	@Test
+	public void TestAdd() 
+	{
+		Calculator calculator = new Calculator();
+
+	}
+	@Test
+	public void TestSubtract() 
+	{
+
+	}
+	@Test
+	public void TestMultiply() 
+	{
+
+	}
+	@Test
+	public void TestDivide() 
+	{
+
+	}
+}

@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-Activity2Application<activity2>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.gcu.activity2.Activity2Application",
+            "projectName": "activity2",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

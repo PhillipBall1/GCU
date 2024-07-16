@@ -1,0 +1,17 @@
+package app;
+
+public class CounterThread extends Thread
+{
+	public void run()
+	{
+		
+		try
+		{
+			
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+}

@@ -1,0 +1,7 @@
+
+import java.lang.Thread;
+
+public class MyThread1 extends Thread
+{
+
+}

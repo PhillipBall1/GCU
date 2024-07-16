@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+    <body>
+        <div th:fragment="header">
+            <div align="center">
+                <h1>Welcome to my CST-339 Spring Boot Application</h1>
+            </div>
+            <div class="bs-example">
+                <nav class="navbar navbar-default">
+                    <div class="navbar-header">
+                        <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                            <span class="sr-only">Toggle Navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a href="#" class="collapse navbar-collapse">GCU</a>
+                    </div>
+
+                    <div id="navbarCollapse" class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a href="https://www.gcu.edu" target="_blank">Home</a></li>
+                            <li><a href="https://lopeshops.gcu.edu" target="_blank">Shop</a></li>
+                            <li><a href="https://news.gcu.edu" target="_blank">News & Events</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="/">Start Page</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <h2 th:text="${title}">Default Message Text</h2><br/>
+            <img th:src="@{data:image/png;base64,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}">
+        </div>
+
+        <div th:fragment="footer">
+            <h5 style="color: purple; text-align: center; position: fixed; bottom: 0; width: 100%;">Copyright 2020 Grand Canyon University</h5>
+        </div>
+    </body>
+</html>

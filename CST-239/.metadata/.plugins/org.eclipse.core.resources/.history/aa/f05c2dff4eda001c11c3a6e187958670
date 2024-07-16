@@ -1,0 +1,11 @@
+package app;
+
+public class Counter
+{
+	static int count = 0;
+	
+	static void Increment() 
+	{
+		count = count + 1;
+	}
+}
