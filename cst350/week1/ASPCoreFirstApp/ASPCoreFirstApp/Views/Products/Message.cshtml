@@ -1,0 +1,18 @@
+﻿<h1>Important Message!!!</h1>
+<p>Just kidding everything is okay.</p>
+
+@{
+    if(ViewData["Name"] != null)
+    {
+        <h3>Hello @ViewData["Name"]</h3>
+
+        if(ViewData["Personality"] != null && Convert.ToInt32(ViewData["Personality"]) > 5)
+        {
+            <h3>You are a nice person</h3>
+        }
+        else if (ViewData["Personality"] != null && Convert.ToInt32(ViewData["Personality"]) <= 5)
+        {
+            <h3>You are tolerated</h3>
+        }
+    }
+}
