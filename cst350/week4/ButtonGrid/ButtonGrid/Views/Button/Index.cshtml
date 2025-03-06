@@ -1,0 +1,89 @@
+﻿@model ButtonGrid.Models.ButtonViewModel
+
+<link rel="stylesheet" href="~/css/buttons.css" />
+<h2>The time is @DateTime.Now</h2>
+
+<form asp-action="ButtonClick">
+    <div class="container">
+        @for(int i = 0; i < Model.Buttons.Count; i++)
+        {
+            @if(i % 5 == 0)
+            {
+                <div style="width: 100%;"></div>
+            }
+            var button = Model.Buttons[i];
+            <div class="game-button" data-id="@button.Id">
+                @Html.Partial("_Button", button)
+            </div>
+        }
+    </div>
+</form>
+@if (Model.Complete)
+{
+    <h3>The Squares are the same color!</h3>
+}
+else
+{
+    <h3>The Squares are not the same color, click the squares to change them!</h3>
+}
+
+@section Scripts{
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).on('mousedown', '.game-button button', function (e) {
+            e.preventDefault();
+
+            var buttonId = $(this).val();
+            alert("The button click is being handled by AJAX. You clicked item " + buttonId + ".");
+
+            switch(e.which){
+                case 1: 
+                    alert("Left Mouse Button Pressed On " + buttonId);
+                    doLeftClick(buttonId);
+                    break;
+                case 2:
+
+                    break;
+                case 3:
+                    alert("Right Mouse Button Pressed On " + buttonId);
+                    doRightClick(buttonId);
+                    break;
+            }
+        });
+
+        function doLeftClick(buttonId){
+            $.ajax({
+                url: '/Button/PartialPageUpdate',
+                type: 'POST',
+                data: { id: buttonId },
+                success: function (data) {
+                    var buttonDiv = $('.game-button[data-id="' + buttonId + '"]');
+                    buttonDiv.html(data);
+                },
+                error: function (xhr, status, error) {
+                    console.error("AJAX Error:", error);
+                    console.error("XHR Response:", xhr.responseText);
+                    alert("AJAX error occurred: " + error + "\nResponse: " + xhr.responseText);
+                }
+            });
+        }
+
+        function doRightClick(buttonId) {
+            $.ajax({
+                url: '/Button/RightClickPartialPageUpdate',
+                type: 'POST',
+                data: { id: buttonId },
+                success: function (data) {
+                    var buttonDiv = $('.game-button[data-id="' + buttonId + '"]');
+                    buttonDiv.html(data);
+                },
+                error: function (xhr, status, error) {
+                    console.error("AJAX Error:", error);
+                    console.error("XHR Response:", xhr.responseText);
+                    alert("AJAX error occurred: " + error + "\nResponse: " + xhr.responseText);
+                }
+            });
+        }
+
+    </script>
+}

@@ -1,0 +1,40 @@
+﻿@model IEnumerable<ProductsApp.ViewModels.ProductViewModel>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4 d-flex align-items-stretch">
+                @Html.Partial("_ProductCard", item)
+            </div><!-- End Col MD -->
+        }
+    </div><!-- End Row -->
+</div><!-- End Container -->
+
+<div class="modal fade" id="editProductModal" tabindex="-1" role="dialog" aria-labelledby="editProductModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content p-3">
+
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="~/js/modalHandler.js"></script>
+    <script src="~/js/formHandler.js"></script>
+    <script src="~/js/productForm.js"></script>
+
+    <script>
+        $(document).ready(function (){
+            var taxRate = '@ViewBag.TaxRate';
+            bindEditProductEvent(taxRate);
+            bindFormSubmission();
+        })
+    </script>
+}

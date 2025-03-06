@@ -2,11 +2,28 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Activity2Application",
+            "request": "launch",
+            "mainClass": "com.gcu.activity2.Activity2Application",
+            "projectName": ""
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-Activity2Application<activity2>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
             "mainClass": "com.gcu.activity2.Activity2Application",
             "projectName": "activity2",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-Activity3Application<activity3>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.gcu.activity3.Activity3Application",
+            "projectName": "activity3",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
         }
